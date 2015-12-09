@@ -40,7 +40,8 @@ class StoriesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, Store::$rules);
-        Store::create($request->all());
+        $store = Store::create($request->all());
+        $this->uploadPhoto($request,$store->id);
         return redirect('stories');
     }
 
@@ -55,6 +56,21 @@ class StoriesController extends Controller
         //
     }
 
+    /**
+     * @param $id
+     */
+    private function uploadPhoto($request, $id)
+    {
+        if ( $request->hasFile('photo')  ) {
+
+            $request->file('photo')
+                ->move(public_path('uploads/store'),
+                    $id.'.jpg'
+                );
+
+        }
+
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -80,6 +96,8 @@ class StoriesController extends Controller
 
         Store::whereId($id)->update($request->only(['name','slug','description']));
 
+        $this->uploadPhoto($request,$id);
+
         return redirect('stories')->with('ok','done');
     }
 
@@ -95,4 +113,6 @@ class StoriesController extends Controller
 
         return redirect('stories')->with('ok','done');
     }
+
+
 }

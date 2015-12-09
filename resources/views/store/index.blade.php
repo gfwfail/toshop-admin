@@ -24,10 +24,12 @@
                    <table class="table table-hover table-striped">
                        <thead>
                        <tr>
-                           <th width="10%">#</th>
-                           <th width="20%">Name</th>
-                           <th width="40%">Description</th>
-                           <th width="30%">Action</th>
+                           <th width="5%">#</th>
+                           <th width="10%">Name</th>
+                           <th width="25%">Logo</th>
+                           <th width="15%">Slug</th>
+                           <th width="30%">Description</th>
+                           <th width="15%">Action</th>
 
                        </tr>
                        </thead>
@@ -38,6 +40,13 @@
                            <tr>
                                <td>{{$store->id}}</td>
                                <td>{{$store->name}}</td>
+                               <td>{!!
+                               file_exists(public_path('uploads/store/'.$store->id.'.jpg'))?
+                               '<img width=100 height=80 src="uploads/store/'.$store->id.'.jpg" >'
+                               :''
+                                !!}</td>
+                               <td>{{$store->slug}}</td>
+
                                <td>{{$store->description}}  </td>
 
 

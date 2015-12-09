@@ -5,8 +5,8 @@
 @section('breadcrumb')
 
     <li><a href="/home">Home</a></li>
-    <li><a href="/Stories">Stories</a></li>
-    <li><a href="/Stories/create">Create</a></li>
+    <li><a href="/stories">Stories</a></li>
+    <li><a href="/stories/edit">Edit</a></li>
 
 
 @endsection
@@ -19,7 +19,7 @@
        <div class="panel panel-default">
            <div class="panel-heading"> </div> <!-- /.panel-heading -->
            <div class="panel-body">
-               {!! Form::model($store, array('route' => array('stories.update', $store->id), 'method' => 'PUT')) !!}
+               {!! Form::model($store, ['route' => array('stories.update', $store->id), 'method' => 'PUT','enctype'=>'multipart/form-data'] ) !!}
                <div class="form-group{{ $errors->first('title', ' has-error') }}">
                    <label>Name</label>
                    {!! Form::text('name',null,['placeholder'=>'Category Name','class'=>"form-control",'id'=>'name'] ) !!}
@@ -35,6 +35,18 @@
 
                    <p class="help-block">eg. women.</p>
                </div>
+
+               <div class="form-group{{ $errors->first('photo', ' has-error') }}">
+                   <label>Logo</label>
+
+                   {!! Form::file('photo',null,['placeholder'=>'logo','class'=>"form-control",'id'=>'photo'] ) !!}
+                   {!!
+                                              file_exists(public_path('uploads/store/'.$store->id.'.jpg'))?
+                                              '<hr><img width=100 height=80 src="/uploads/store/'.$store->id.'.jpg" >'
+                                              :''
+                                               !!}
+               </div>
+
 
                <button type="submit" class="btn btn-default">Save</button>
 

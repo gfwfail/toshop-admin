@@ -12,7 +12,8 @@ class Store extends Model
 
     public static $rules =
         [ 'name' => 'required|max:255',
-         'slug'=>'required|unique:stories,id|max:255'];
+         'slug'=>'required|unique:stories,slug|max:255',
+        'photo'=> 'mimes:jpeg,jpg'];
 
     public function goods()
     {
