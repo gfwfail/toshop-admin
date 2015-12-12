@@ -7,7 +7,7 @@
 
     <title>Home | Toshop.net</title>
 
-    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="description" content="Toshop.net ">
     <meta name="author" content="LayoutIt!">
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
