@@ -1,2 +1,94 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "_variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "_bootswatch";
+$nav-background : #607d8b;　
 
+
+.container {
+  max-width: 750pt;
+}
+
+.navbar-nav > li {
+  transition: background 0.5s;
+  &:hover {
+    background: $navbar-default-link-active-bg;
+  }
+}
+.top-wrap {
+  width: 100%;
+  background: #f8f8f8;
+  color: #666;
+  padding: 5px;
+  border-bottom: solid 1px #e8e8e8;
+}
+#top-search {
+  width:300px;
+}
+.form-control {
+  transition: border;
+}
+.carousel-control {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 30px;
+  color: #fff;
+  background: #222;
+  opacity: 0;
+  height: 50px;
+  top: 110px;
+  left: 0;
+  transition: opacity 0.2s;
+}
+.carousel .carousel-control { opacity: 0; }
+.carousel:hover .carousel-control { opacity: 0.5; }
+.carousel-ad-text div{
+  font-size:18px;
+}
+.store-table{
+  td {
+    width: 20%;
+    height: 100px;
+    text-align:center;
+    vertical-align: middle;
+  }
+}
+
+.vcenter {
+
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.good-list {
+  border-bottom:solid 1px #e8e8e8;
+  border-left:solid 1px #e8e8e8;
+  border-right:solid 1px #e8e8e8;
+
+}
+.good-list:first-child {
+  border-top:solid 1px #e8e8e8;
+}
+.good-img  {
+
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.good-action  {
+
+  margin-top: 20px;
+
+}
+.couponcode {
+  width: 100px;
+}
+
+.border-bot {
+    padding-bottom: 4px;
+    border-bottom: solid 4px #E79E42;
+}
