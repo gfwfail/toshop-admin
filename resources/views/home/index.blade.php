@@ -8,7 +8,6 @@
     <title>Home | Toshop.net</title>
 
     <meta name="description" content="Toshop.net ">
-    <meta name="author" content="LayoutIt!">
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -138,7 +137,7 @@
                 <!-- 轮播（Carousel）项目 -->
                 <div class="carousel-inner">
                     @for ($slides = 0; $slides < ceil($stores->count()/5); $slides++)
-                    <div class="item active">
+                    <div class="item{{($slides==0)?' active':''}}">
 
                         <table class="table table-hover  table-bordered store-table ">
                             <?php $i=0;?>
