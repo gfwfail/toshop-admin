@@ -141,6 +141,7 @@
 
                         <table class="table table-hover  table-bordered store-table ">
                             <?php $i=0;?>
+
                             @foreach ($storeSlide as $store )
                                 {!! ($i%5==0)? '<tr><td>':'<td>'!!}
 
