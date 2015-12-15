@@ -4,7 +4,7 @@ use App\Store;
 use Illuminate\Contracts\View\View;
 use App\Category;
 
-class GoodComposer {
+class AdminComposer {
 
     /**
      * Bind data to the view.

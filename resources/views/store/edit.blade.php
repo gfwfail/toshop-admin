@@ -46,7 +46,16 @@
                                               :''
                                                !!}
                </div>
+               <div class="form-group{{ $errors->first('link', ' has-error') }}">
+                   <label>Link</label>
+                   {!! Form::text('link',null,['placeholder'=>'Link','class'=>"form-control",'id'=>'link'] ) !!}
+               </div>
 
+
+               <div class="form-group{{ $errors->first('categories_id', ' has-error') }}">
+                   <label> Category </label>
+                   {!! Form::select('categories_id[]',$categories->lists('name','id'),$store->categories->lists('id')->toArray(),['class'=>"form-control",'multiple'=>'multiple','id'=>'categories_id'] ) !!}
+               </div>
 
                <button type="submit" class="btn btn-default">Save</button>
 

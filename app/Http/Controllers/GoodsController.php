@@ -78,7 +78,9 @@ class GoodsController extends Controller
     {
         $this->validate($request, Good::$rules);
 
-        Good::whereId($id)->update($request->only(['name','restrict','expired_at','store_id','description']));
+        $good=Good::find($id);
+        $good->update($request->only(['name','restrict','expired_at','store_id','description']));
+        $good->categories()->sync($request->input('categories_id'));
 
         return redirect('goods')->with('ok','done');
     }

@@ -14,7 +14,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         // Using class based composers...
-        \View::composer('good.*', 'App\Http\Composers\GoodComposer');
+        \View::composer(['good.*','store.*'], 'App\Http\Composers\AdminComposer');
     }
 
 

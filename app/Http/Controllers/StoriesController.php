@@ -40,7 +40,7 @@ class StoriesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, Store::$rules);
-        $store = Store::create($request->all());
+        $store = Store::create($request->all())->categories()->sync($request->input('categories_id'));
         $this->uploadPhoto($request,$store->id);
         return redirect('stories');
     }
@@ -94,7 +94,9 @@ class StoriesController extends Controller
     {
         $this->validate($request, Store::$rules);
 
-        Store::whereId($id)->update($request->only(['name','slug','description']));
+        $store = Store::find($id);
+        $store->update($request->only(['name','slug','description']));
+        $store->categories()->sync($request->input('categories_id'));
 
         $this->uploadPhoto($request,$id);
 

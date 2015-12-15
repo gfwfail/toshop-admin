@@ -72,10 +72,13 @@
                    {!! Form::text('expired_at',null,['placeholder'=>'Expire date','class'=>"form-control",'id'=>'expired_at'] ) !!}
                </div>
 
+
+
                <div class="form-group{{ $errors->first('store_id', ' has-error') }}">
                    <label> Store </label>
                    {!! Form::select('store_id',$stories->lists('name','id'),null,['placeholder'=>'Select a store','class'=>"form-control",'id'=>'store_id'] ) !!}
                </div>
+
 
                <div class="form-group{{ $errors->first('categories_id', ' has-error') }}">
                    <label> Category </label>
