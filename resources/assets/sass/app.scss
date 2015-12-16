@@ -6,7 +6,7 @@ $nav-background : #607d8b;　
 
 
 .container {
-  max-width: 750pt;
+  max-width: 780pt;
 }
 
 .navbar-nav > li {
@@ -52,9 +52,23 @@ $nav-background : #607d8b;　
 .store-table{
   td {
     width: 20%;
-    height: 100px;
+    height: 140px;
+    padding: 12px;
     text-align:center;
     vertical-align: middle;
+  }
+}
+.top-panel {
+  border-top:solid 10px lighten($nav-background,10%);
+  h3 {
+    margin-top:10px;
+  }
+
+
+}
+.letter-nav {
+  a {
+    margin-right:10px;
   }
 }
 

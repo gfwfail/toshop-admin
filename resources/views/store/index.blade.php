@@ -26,10 +26,12 @@
                        <tr>
                            <th width="5%">#</th>
                            <th width="10%">Name</th>
-                           <th width="25%">Logo</th>
-                           <th width="15%">Slug</th>
-                           <th width="30%">Description</th>
-                           <th width="15%">Action</th>
+                           <th width="20%">Logo</th>
+                           <th width="10%">Slug</th>
+                           <th width="10%">CashBack</th>
+
+                           <th width="20%">Description</th>
+                           <th width="25%">Action</th>
 
                        </tr>
                        </thead>
@@ -46,6 +48,7 @@
                                :''
                                 !!}</td>
                                <td>{{$store->slug}}</td>
+                               <th width="20%">{{$store->cashback}}</th>
 
                                <td>{{$store->description}}  </td>
 

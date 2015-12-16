@@ -41,6 +41,13 @@
                    {!! Form::file('photo',null,['placeholder'=>'logo','class'=>"form-control",'id'=>'photo'] ) !!}
 
                </div>
+
+               <div class="form-group{{ $errors->first('cashback', ' has-error') }}">
+                   <label>Cashback</label>
+                   {!! Form::text('cashback',null,['placeholder'=>'cashback','class'=>"form-control",'id'=>'cashback'] ) !!}
+               </div>
+
+
                <div class="form-group{{ $errors->first('link', ' has-error') }}">
                    <label>Link</label>
                    {!! Form::text('link',null,['placeholder'=>'Link','class'=>"form-control",'id'=>'link'] ) !!}

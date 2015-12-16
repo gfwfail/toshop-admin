@@ -14,8 +14,8 @@ class HomeController extends Controller
     {
 
 
-        $stores = Store::all();
-        $storeSlide = [];
+        $stores = Store::orderBy('name')->get();
+       /* $storeSlide = [];
         for ($i=0;$i<10;$i++) {
 
             if (isset($stores[$i])) {
@@ -25,6 +25,15 @@ class HomeController extends Controller
                 $storeSlide[$i] = '';
             }
         }
+       */
+
         return view('home.index',compact('stores','storeSlide'));
+    }
+
+    public function search($keyword)
+    {
+        $stores = Store::where('title', 'LIKE', '%' . $keyword . '%')->paginate(10);
+        return view('home.list',compact('stores'));
+
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-    protected $fillable = ['name', 'slug','description','link'];
+    protected $fillable = ['name', 'slug','description','link','cashback'];
     public $timestamps = false;
     protected $table = 'stories';
 
@@ -14,7 +14,8 @@ class Store extends Model
         [ 'name' => 'required|max:255',
          'slug'=>'required|unique:stories,slug|max:255',
         'photo'=> 'mimes:jpeg,jpg',
-        'categories_id'=>'required'
+        'categories_id'=>'required',
+            'cashback'=>'digits_between:0,100'
         ];
 
     public function goods()

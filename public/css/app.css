@@ -8609,7 +8609,7 @@ a.list-group-item-danger.active:focus {
 }
 
 .container {
-  max-width: 750pt;
+  max-width: 780pt;
 }
 
 .navbar-nav > li {
@@ -8667,9 +8667,22 @@ a.list-group-item-danger.active:focus {
 
 .store-table td {
   width: 20%;
-  height: 100px;
+  height: 140px;
+  padding: 12px;
   text-align: center;
   vertical-align: middle;
+}
+
+.top-panel {
+  border-top: solid 10px #7b96a3;
+}
+
+.top-panel h3 {
+  margin-top: 10px;
+}
+
+.letter-nav a {
+  margin-right: 10px;
 }
 
 .vcenter {
