@@ -122,11 +122,11 @@
                                     $c[$f]++;
                                         ?>
 
-                                    <h4 class="text-danger"> <a  {!!  ($c[$f]==1)?'id="'.$f.'" name="'.$f.'"':'' !!} href="{{$store->link}}" class="text-primary">
+                                    <h4 class="text-danger"> <a target="_blank"  {!!  ($c[$f]==1)?'id="'.$f.'" name="'.$f.'"':'' !!} href="{{$store->link}}" class="text-primary">
                                             {{$store->name}}</a> </h4>
                             </td>
                             <td><h4 class="text-danger pull-left"> {{$store->cashback}} </h4></td>
-                            <td><a href="{{$store->link}}" class="btn btn-sm btn-primary">Shop now</a> </td>
+                            <td><a target="_blank" href="{{$store->link}}" class="btn btn-sm btn-primary">Shop now</a> </td>
                         </tr>
                        @endforeach
                         </tbody>
