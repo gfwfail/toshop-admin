@@ -146,12 +146,14 @@
                                 {!! ($i%5==0)? '<tr><td>':'<td>'!!}
 
                                     @if ($store)
+                                        <a href="{{$store->link}}">
                                         @if ( file_exists(public_path('uploads/store/'.$store->id.'.jpg')) )
                                             <img width=100 height=80 src="/uploads/store/{{$store->id}}.jpg" >
                                         @else
                                             <img src="http://placehold.it/100x80" width="100" height="80">
                                         @endif
                                           <p>{{ $store->name }}</p>
+                                        </a>
                                     @else
 
                                     @endif
