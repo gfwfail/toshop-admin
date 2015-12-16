@@ -15,7 +15,7 @@ class Store extends Model
          'slug'=>'required|unique:stories,slug|max:255',
         'photo'=> 'mimes:jpeg,jpg',
         'categories_id'=>'required',
-            'cashback'=>'digits_between:0,100'
+
         ];
 
     public function goods()
