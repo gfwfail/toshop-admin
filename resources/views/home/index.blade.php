@@ -125,7 +125,7 @@
                                     <h4 class="text-danger"> <a  {!!  ($c[$f]==1)?'id="'.$f.'" name="'.$f.'"':'' !!} href="{{$store->link}}" class="text-primary">
                                             {{$store->name}}</a> </h4>
                             </td>
-                            <td><h4 class="text-danger"> %{{$store->cashback}} </h4></td>
+                            <td><h4 class="text-danger pull-left"> %{{number_format($store->cashback,1,".",",")}} </h4></td>
                             <td><a href="{{$store->link}}" class="btn btn-sm btn-primary">Shop now</a> </td>
                         </tr>
                        @endforeach
