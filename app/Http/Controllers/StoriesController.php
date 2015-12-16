@@ -39,7 +39,9 @@ class StoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, Store::$rules);
+
+        $rules = Store::$rules;
+         $this->validate($request, $rules);
         $store = Store::create($request->all());
         $store->categories()->sync($request->input('categories_id'));
         $this->uploadPhoto($request,$store->id);
@@ -93,7 +95,10 @@ class StoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, Store::$rules);
+        $rules = Store::$rules;
+        $rules['slug']='required|unique:stories,slug,'.$id.'|max:25';
+
+        $this->validate($request, $rules);
 
         $store = Store::find($id);
         $store->update($request->only(['name','slug','description','link','cashback']));
