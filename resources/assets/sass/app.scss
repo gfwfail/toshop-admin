@@ -67,9 +67,17 @@ $nav-background : #607d8b;　
 
 }
 .letter-nav {
-  a {
-    margin-right:10px;
+  width: 90%;
+  font-size:20px;
+  margin-left:10px;
+  text-align: justify;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
   }
+
 }
 
 .vcenter {

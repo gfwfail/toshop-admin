@@ -8681,8 +8681,17 @@ a.list-group-item-danger.active:focus {
   margin-top: 10px;
 }
 
-.letter-nav a {
-  margin-right: 10px;
+.letter-nav {
+  width: 90%;
+  font-size: 20px;
+  margin-left: 10px;
+  text-align: justify;
+}
+
+.letter-nav:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 
 .vcenter {
