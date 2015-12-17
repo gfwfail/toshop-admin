@@ -25,6 +25,8 @@ Route::group( ['middleware' => 'auth'],function () {
     Route::resource('categories', 'CategoriesController');
     Route::resource('stories', 'StoriesController');
     Route::resource('goods', 'GoodsController');
+    Route::resource('pages', 'PagesController');
+
 
 });
 
@@ -33,6 +35,9 @@ Route::group( ['middleware' => 'auth'],function () {
 Route::group(['namespace'=>'Frontend'], function() {
     Route::get('/', [
         'as' => 'home', 'uses' => 'HomeController@index'
+    ]);
+    Route::get('/pages/{slug}', [
+        'as' => 'home', 'uses' => 'HomeController@displayPageBySlug'
     ]);
     Route::get('/promo/boxun-right' ,function() {
         return '

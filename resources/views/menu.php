@@ -42,6 +42,18 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:;" data-toggle="collapse" data-target="#pages"><i class="fa fa-fw fa-file-text"></i> Pages <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="pages" class="collapse">
+                <li>
+                    <a href="/pages/">Pages List</a>
+                </li>
+                <li>
+                    <a href="/pages/create">Add new page</a>
+                </li>
+            </ul>
+        </li>
+
 
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Page;
 use App\Store;
 use Illuminate\Http\Request;
 
@@ -30,6 +31,16 @@ class HomeController extends Controller
         return view('home.index',compact('stores','storeSlide'));
     }
 
+    public function displayPageBySlug($slug)
+    {
+
+          $page = Page::whereSlug( trim($slug) )->first();
+        if (!$page) {
+            return abort(404);
+        }
+        return $page->content;
+
+    }
     public function search($keyword)
     {
         $stores = Store::where('title', 'LIKE', '%' . $keyword . '%')->paginate(10);
