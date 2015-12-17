@@ -26,12 +26,12 @@
                        <tr>
                            <th width="5%">#</th>
                            <th width="10%">Name</th>
-                           <th width="20%">Logo</th>
-                           <th width="10%">Slug</th>
-                           <th width="10%">CashBack</th>
-
+                           <th width="15%">Logo</th>
+                           <th width="12%">Slug</th>
+                           <th width="8%">CashBack</th>
+                           <th width="5%">IsTrack</th>
                            <th width="20%">Description</th>
-                           <th width="25%">Action</th>
+                           <th width="30%">Action</th>
 
                        </tr>
                        </thead>
@@ -49,6 +49,7 @@
                                 !!}</td>
                                <td>{{$store->slug}}</td>
                                <th width="20%">{{$store->cashback}}</th>
+                               <td>{{ ($store->istrack) ?'Y':'N'}}  </td>
 
                                <td>{{$store->description}}  </td>
 
@@ -56,11 +57,11 @@
                                <td>
                                    {!! Form::open(array('url' => 'stories/' . $store->id, 'class' => 'pull-right')) !!}
                                    {!!  Form::hidden('_method', 'DELETE') !!}
-                                   {!! Form::submit('删除', array('class' => 'btn btn-danger')) !!}
+                                   {!! Form::submit('删除', array('class' => 'btn btn-sm btn-danger')) !!}
                                    {!! Form::close() !!}
 
 
-                                   <a class="btn btn-small btn-info"
+                                   <a class="btn btn-sm btn-info"
                                       href="{!! URL::to('stories/' . $store->id . '/edit') !!}">编辑</a>
 
                                </td>
