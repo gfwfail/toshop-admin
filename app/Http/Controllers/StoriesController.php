@@ -101,7 +101,7 @@ class StoriesController extends Controller
         $this->validate($request, $rules);
 
         $store = Store::find($id);
-        $store->update($request->only(['name','slug','description','link','cashback']));
+        $store->update($request->only(['name','slug','description','link','cashback','istrack']));
         $store->categories()->sync($request->input('categories_id'));
 
         $this->uploadPhoto($request,$id);

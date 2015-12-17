@@ -54,6 +54,12 @@
                </div>
 
 
+               <div class="form-group{{ $errors->first('istrack', ' has-error') }}">
+                   <label>istrack</label>
+                   {!! Form::checkbox('istrack') !!}
+               </div>
+
+
                <div class="form-group{{ $errors->first('categories_id', ' has-error') }}">
                    <label> Category </label>
                    {!! Form::select('categories_id[]',$categories->lists('name','id'),null,['class'=>"form-control",'multiple'=>'multiple','id'=>'categories_id'] ) !!}

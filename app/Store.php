@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-    protected $fillable = ['name', 'slug','description','link','cashback'];
+    protected $fillable = ['name', 'slug','description','link','cashback','istrack'];
     public $timestamps = false;
     protected $table = 'stories';
 
