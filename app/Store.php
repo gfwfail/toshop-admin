@@ -27,4 +27,8 @@ class Store extends Model
         return $this->belongsToMany(Category::class);
     }
 
-}
+    public function getLinkAttribute($value)
+    {
+        $sid = auth()->user()?(auth()->user()->id.'**'.$this->id):'home**'.$this->id;
+        return sid_url($value,$sid);
+    }}
