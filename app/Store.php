@@ -29,6 +29,6 @@ class Store extends Model
 
     public function getLinkAttribute($value)
     {
-        $sid = auth()->user()?(auth()->user()->id.'**'.$this->id):'home**'.$this->id;
+        $sid = auth()->user()?(auth()->user()->id.'W'.$this->id):'TOSHOP'.$this->id;
         return sid_url($value,$sid);
     }}
