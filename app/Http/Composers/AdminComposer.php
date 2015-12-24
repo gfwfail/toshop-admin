@@ -15,7 +15,11 @@ class AdminComposer {
     public function compose(View $view)
     {
         $view->with('categories', Category::all())
-             ->with('stories',Store::all());
+             ->with('stories',Store::all())
+             ->with('area',config('enum.area'))
+             ->with('language',config('enum.language'))
+
+        ;
     }
 
 }

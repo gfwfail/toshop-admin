@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-    protected $fillable = ['name', 'slug','description','link','cashback','istrack'];
+    protected $fillable = ['name','language','area', 'slug','description','link','cashback','istrack'];
     public $timestamps = false;
     protected $table = 'stories';
 
@@ -27,8 +27,31 @@ class Store extends Model
         return $this->belongsToMany(Category::class);
     }
 
-    public function getLinkAttribute($value)
+
+    public function getLanguageAttribute($value)
     {
+        return $value?explode(',',$value):[];
+    }
+
+    public function setLanguageAttribute($value)
+    {
+        $this->attributes['language'] =$value?implode(',',$value):'';
+    }
+
+
+    public function getAreaAttribute($value)
+    {
+        return $value?explode(',',$value):[];
+    }
+
+    public function setAreaAttribute($value)
+    {
+        $this->attributes['area'] = $value?implode(',',$value):'';
+    }
+
+    public function getSidLinkAttribute()
+    {
+        $value = $this->link;
         $sid = auth()->user()?(auth()->user()->id.'W'.$this->id):'TOSHOP'.$this->id;
         return sid_url($value,$sid);
     }}
