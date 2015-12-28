@@ -41,12 +41,17 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
 
     Route::get('/reg/{id}', 'Auth\AuthController@registerByReferrer');
 
-    Route::get('/dashboard', [
-        'as' => 'home', 'uses' => 'DashboardController@index'
-    ]);
-
+    Route::group( ['middleware' => ['auth']],function () {
+        Route::get('/dashboard', [
+            'as' => 'home', 'uses' => 'DashboardController@index'
+        ]);
+    });
     Route::get('/', [
         'as' => 'home', 'uses' => 'HomeController@index'
+    ]);
+
+    Route::get('/home2', [
+        'as' => 'home2', 'uses' => 'HomeController@extrabux'
     ]);
 
 

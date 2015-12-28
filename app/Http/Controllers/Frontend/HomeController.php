@@ -11,6 +11,25 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+
+    public function extrabux()
+    {
+        $stores = Store::orderBy('name')->get();
+         $storeSlide = [];
+         for ($i=0;$i<10;$i++) {
+
+             if (isset($stores[$i])) {
+                 $storeSlide[$i] = $stores[$i];
+                 }
+             else {
+                 $storeSlide[$i] = '';
+             }
+         }
+
+
+        return view('home.oldindex',compact('stores','storeSlide'));
+
+    }
     public function index()
     {
 
