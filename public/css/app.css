@@ -8817,6 +8817,13 @@ a.list-group-item-danger.active:focus {
   line-height: 24px;
 }
 
+.tt-suggestion:hover {
+  background: #008cba;
+  color: #fff;
+  cursor: pointer;
+  cursor: hand;
+}
+
 .tt-suggestion.tt-is-under-cursor {
   /* UPDATE: newer versions use .tt-suggestion.tt-cursor */
   color: #fff;

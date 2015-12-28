@@ -199,6 +199,11 @@ $nav-background : $gray-dark;　
   padding: 3px 20px;
   font-size: 14px;
   line-height: 24px;
+  &:hover{
+    background: $brand-primary;
+    color:#fff;
+    cursor: pointer; cursor: hand;
+  }
 }
 
 .tt-suggestion.tt-is-under-cursor { /* UPDATE: newer versions use .tt-suggestion.tt-cursor */

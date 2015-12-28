@@ -23810,7 +23810,7 @@ $('.typeahead').typeahead(null, {
             '</div>'
         ].join('\n'),
         suggestion: function(data) {
-            return '<p style="background: #fff"><strong>' + data.name + '</strong>  <span class="text-warning pull-right"> ' + data.cashback + '</span> </p>';
+            return '<p><strong>' + data.name + '</strong>  <h3 class="text-warning pull-right"> ' + data.cashback + '</h3> </p>';
         }
     }
 });
