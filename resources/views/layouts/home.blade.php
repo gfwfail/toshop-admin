@@ -59,7 +59,7 @@
             <a href="/"> <img src="{{asset("assets/img/logo.png")}}"> </a>
         </div>
         <div class="col-md-9">
-            <form class="navbar-form navbar-left" role="search">
+            <form class="navbar-form navbar-left" role="search" method="get" action="/">
                 <div class="form-group">
                     <input type="text" name="keyword" id="top-search" class="form-control typeahead"
                            placeholder="Search for stores">
