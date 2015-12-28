@@ -19,24 +19,32 @@
       </span>
             </div>
             <hr>
-            <form role="form" method="POST" action="/register">
+            <form role="form" method="POST" action="/register" data-toggle="validator" >
                 {!! csrf_field() !!}
                 <div class="form-group">
                     <label>E-mail</label>
-                    <input class="form-control" placeholder="E-mail" name="email" value="">
+                    <input class="form-control" placeholder="E-mail" name="email" value="" type="email" required>
+                    <div class="help-block with-errors"></div>
+
                 </div>
                 <div class="form-group">
                     <label>Name</label>
-                    <input class="form-control" placeholder="Name" name="name" value="">
+                    <input class="form-control" placeholder="Name" name="name" value="" required>
+                    <div class="help-block with-errors"></div>
+
                 </div>
 
                 <div class="form-group">
                     <label>Password</label>
-                    <input class="form-control" placeholder="Password" type="password" name="password">
+                    <input class="form-control"  id="regPassword" placeholder="Password" type="password" data-minlength="6"  name="password" required>
+                    <div class="help-block with-errors"></div>
+
                 </div>
                 <div class="form-group">
                     <label>Confirmation</label>
-                    <input class="form-control" placeholder="Retype password" type="password" name="password_confirmation">
+                    <input class="form-control" data-match="#regPassword"  placeholder="Retype password" data-minlength="6"  type="password" name="password_confirmation" required>
+                    <div class="help-block with-errors"></div>
+
                 </div>
 
                 <button type="submit" class="btn btn-info">Submit</button>
@@ -50,17 +58,20 @@
             <hr>
 
 
-            <form role="form" action="login" method="post">
+            <form role="form" action="login" method="post" data-toggle="validator">
                 {!! csrf_field() !!}
                 <fieldset>
                     <div class="form-group-sm">
                         <input class="form-control" placeholder="E-mail" name="email" type="email"
-                               value="{{old('email')}}" autofocus>
+                               value="{{old('email')}}" autofocus required>
+                        <div class="help-block with-errors"></div>
+
                     </div>
                     <br>
                     <div class="form-group-sm">
-                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                        <input class="form-control" placeholder="Password" name="password" type="password" value="" required>
                     </div>
+                    <div class="help-block with-errors"></div>
 
 
                     <br>
