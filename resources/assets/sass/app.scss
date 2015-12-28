@@ -2,7 +2,7 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "_bootswatch";
-$nav-background : #607d8b;　
+$nav-background : $gray-dark;　
 
 
 .container {
@@ -59,7 +59,7 @@ $nav-background : #607d8b;　
   }
 }
 .top-panel {
-  border-top:solid 10px lighten($nav-background,10%);
+  border-top:solid 10px darken($brand-primary,10%);
   h3 {
     margin-top:10px;
   }

@@ -84,7 +84,7 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p> &copy;2015-2016 Toshop.net | Terms of Service | Privacy Policy
+                <p style="color:#666"> <i class="fa fa-copyright"></i> 2015-2016 Toshop.net | Terms of Service | Privacy Policy
                 </p>
 
 
