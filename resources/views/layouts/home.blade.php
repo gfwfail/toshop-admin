@@ -56,7 +56,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <img src="{{asset("assets/img/logo.png")}}">
+            <a href="/"> <img src="{{asset("assets/img/logo.png")}}"> </a>
         </div>
         <div class="col-md-9">
             <form class="navbar-form navbar-left" role="search">
@@ -131,7 +131,7 @@
     </script>
 
 
-   
+
     <modal :show.sync="showModal">
 
     </modal>
