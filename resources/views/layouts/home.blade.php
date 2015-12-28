@@ -131,8 +131,7 @@
     </script>
 
 
-    <button id="show-modal" @click="showModal = true">Show Modal</button>
-    <!-- use the modal component, pass in the prop -->
+   
     <modal :show.sync="showModal">
 
     </modal>
