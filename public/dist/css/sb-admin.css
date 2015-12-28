@@ -18,7 +18,6 @@ body {
 }
 td {
     word-break: break-all;
-    overflow: scroll;
 }
 #wrapper {
     padding-left: 0;

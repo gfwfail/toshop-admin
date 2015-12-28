@@ -3,13 +3,16 @@
 
 
 
+Route::get('/asa',['middleware'=>'auth',function () {
 
-Route::group(['domain'=>env('ADMIN_DOMAIN','admin.cp.dev')] , function(){
+    return 1;
+}]);
+Route::group(['middleware' => 'web','domain'=>env('ADMIN_DOMAIN','admin.cp.dev')] , function(){
     Route::get('auth/login', 'Auth\AuthController@getLogin');
     Route::post('auth/login', 'Auth\AuthController@postLogin');
     Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-Route::group( ['middleware' => 'auth'],function () {
+Route::group( ['middleware' => ['auth','admin']],function () {
 
     Route::get('/home', [
         'as' => 'home', 'uses' => 'DashboardController@index'
@@ -32,10 +35,25 @@ Route::group( ['middleware' => 'auth'],function () {
 
 });
 
-Route::group(['namespace'=>'Frontend'], function() {
+Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
+
+    Route::auth();
+
+    Route::get('/reg/{id}', 'Auth\AuthController@registerByReferrer');
+
+    Route::get('/dashboard', [
+        'as' => 'home', 'uses' => 'DashboardController@index'
+    ]);
+
     Route::get('/', [
         'as' => 'home', 'uses' => 'HomeController@index'
     ]);
+
+
+    Route::get('/home', [
+        'as' => 'home', 'uses' => 'HomeController@index'
+    ]);
+
     Route::get('/pages/{slug}', [
         'as' => 'home', 'uses' => 'HomeController@displayPageBySlug'
     ]);

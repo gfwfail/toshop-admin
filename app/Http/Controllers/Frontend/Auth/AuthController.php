@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Frontend\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -40,6 +41,18 @@ class AuthController extends Controller
         $this->middleware('guest', ['except' => 'logout']);
     }
 
+
+    protected function registerByReferrer($userId)
+    {
+        $cookie = cookie('referrer', $userId, 48*60);
+        return redirect('/register')->withCookie($cookie);
+    }
+
+    public function showLoginForm()
+    {
+        return view('home.auth.login');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -63,10 +76,19 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+
+
+        $referrer = request()->cookie('referrer');
+
+
+        if (!User::find($referrer) ){
+            $referrer = 0;
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'referrer'=>$referrer
         ]);
     }
 }
