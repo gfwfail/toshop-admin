@@ -30,19 +30,21 @@ class AccountService
     }
 
 
-    public function refundToReferrer($userid,$amount) {
+    public function refundToReferrer($userid,$amount,$discount) {
 
         $user = \App::make('App\Repositories\Contracts\UserRepository');
 
-        $depth=['0.3','0.1','0.05','0.025','0.01'];
+        $depth=['0.2','0.1','0.06','0.04','0.01'];
 
         $referrer = $user->find($userid)->referrer;
+
+        $discount =  $discount>1?$discount/100:$discount;
 
 
         for ($i=0; $i<5; $i++) {
             if  ($user->isExist($referrer)) {
 
-                $this->debit($referrer,$userid,$amount*0.05*$depth[$i],'下线返利');
+                $this->debit($referrer,$userid,$amount*$discount*$depth[$i],'Cash back');
 
                 $referrer = $user->find($referrer)->referrer;
             }

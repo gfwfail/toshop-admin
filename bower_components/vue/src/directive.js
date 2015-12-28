@@ -10,7 +10,6 @@ import {
   warn
 } from './util/index'
 import Watcher from './watcher'
-import { removeTags } from './parsers/text'
 import { parseExpression, isSimplePath } from './parsers/expression'
 
 function noop () {}
@@ -83,15 +82,7 @@ Directive.prototype._bind = function () {
     this.el && this.el.removeAttribute
   ) {
     var attr = descriptor.attr || ('v-' + name)
-    if (attr !== 'class') {
-      this.el.removeAttribute(attr)
-    } else {
-      // for class interpolations, only remove the parts that
-      // need to be interpolated.
-      this.el.className = removeTags(this.el.className)
-        .trim()
-        .replace(/\s+/g, ' ')
-    }
+    this.el.removeAttribute(attr)
   }
 
   // copy def properties
@@ -109,6 +100,7 @@ Directive.prototype._bind = function () {
   if (this.bind) {
     this.bind()
   }
+  this._bound = true
 
   if (this.literal) {
     this.update && this.update(descriptor.raw)
@@ -156,7 +148,6 @@ Directive.prototype._bind = function () {
       this.update(watcher.value)
     }
   }
-  this._bound = true
 }
 
 /**
@@ -213,7 +204,8 @@ Directive.prototype._setupParamWatcher = function (key, expression) {
       called = true
     }
   }, {
-    immediate: true
+    immediate: true,
+    user: false
   })
   ;(this._paramUnwatchFns || (this._paramUnwatchFns = [])).push(unwatch)
 }

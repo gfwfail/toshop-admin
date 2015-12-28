@@ -19,15 +19,15 @@
     "*.yml"
   ],
   "homepage": "https://github.com/vuejs/vue",
-  "version": "1.0.11",
-  "_release": "1.0.11",
+  "version": "1.0.13",
+  "_release": "1.0.13",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.11",
-    "commit": "337974edf3a38124d00d90b0c607aca32af7ed5f"
+    "tag": "v1.0.13",
+    "commit": "5f9a74418bb7d4f129460d1484cb90055b31f565"
   },
   "_source": "git://github.com/vuejs/vue.git",
-  "_target": "~1.0.11",
+  "_target": "~1.0.13",
   "_originalSource": "vue",
   "_direct": true
 }
