@@ -61,7 +61,7 @@
         <div class="col-md-9">
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" name="keyword" id="top-search" class="form-control"
+                    <input type="text" name="keyword" id="top-search" class="form-control typeahead"
                            placeholder="Search for stores">
                 </div>
                 <button type="submit" class="btn btn-success">   <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>

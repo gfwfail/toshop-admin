@@ -50,6 +50,23 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
         'as' => 'home', 'uses' => 'HomeController@index'
     ]);
 
+
+    Route::get('/api/stores', [
+        'as' => 'home', function(){
+            $keyword = request()->get('keyword');
+            if ($keyword)
+            {
+                $stores = App\Store::where('name','like','%'.$keyword.'%')->orderBy('name')->get(['name','cashback']);
+            }
+            else {
+                $stores = App\Store::orderBy('name')->get(['name','cashback']);
+
+            }
+            return $stores->toJson();
+        }
+    ]);
+
+
     Route::get('/home2', [
         'as' => 'home2', 'uses' => 'HomeController@extrabux'
     ]);

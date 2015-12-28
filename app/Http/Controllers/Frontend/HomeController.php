@@ -30,11 +30,18 @@ class HomeController extends Controller
         return view('home.oldindex',compact('stores','storeSlide'));
 
     }
-    public function index()
+    public function index(Request $request)
     {
+        $keyword = $request->get('keyword');
+        if ($keyword)
+        {
+            $stores = Store::where('name','like','%'.$keyword.'%')->orderBy('name')->get();
+        }
+        else {
+            $stores = Store::orderBy('name')->get();
 
+        }
 
-        $stores = Store::orderBy('name')->get();
        /* $storeSlide = [];
         for ($i=0;$i<10;$i++) {
 

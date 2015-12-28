@@ -19,8 +19,8 @@ elixir(function(mix) {
         'bower_components/bootstrap/dist/js/bootstrap.js',
         'bower_components/vue/dist/vue.js',
         'resources/assets/js/validator.js',
-        'resources/assets/js/app.js'
-    ],
+        'resources/assets/js/typeahead.js',
+        'resources/assets/js/app.js'],
         'public/assets/js/app.js', './');
 
 
