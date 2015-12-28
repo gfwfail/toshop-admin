@@ -27,6 +27,7 @@ elixir(function(mix) {
     mix.version(['public/assets/js/app.js']);
 
     mix.copy('bower_components/jquery/dist/jquery.min.map', 'public/js/jquery.min.map');
+    mix.copy('bower_components/bootstrap/fonts', 'public/fonts/bootstrap/');
 
 
 });

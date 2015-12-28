@@ -64,7 +64,7 @@
                     <input type="text" name="keyword" id="top-search" class="form-control"
                            placeholder="Search for stores">
                 </div>
-                <button type="submit" class="btn btn-default">Search</button>
+                <button type="submit" class="btn btn-success">   <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
             </form>
         </div>
     </div>

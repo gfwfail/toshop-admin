@@ -1414,13 +1414,13 @@ textarea {
 }
 
 a {
-  color: #008cba;
+  color: #003f54;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #008cba;
+  color: #003f54;
   text-decoration: underline;
 }
 
@@ -4392,7 +4392,7 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .btn-link {
-  color: #008cba;
+  color: #003f54;
   font-weight: normal;
   border-radius: 0;
 }
@@ -4415,7 +4415,7 @@ fieldset[disabled] .btn-link {
 
 .btn-link:hover,
 .btn-link:focus {
-  color: #008cba;
+  color: #003f54;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -5079,7 +5079,7 @@ tbody.collapse.in {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #ecf0f1;
-  border-color: #008cba;
+  border-color: #003f54;
 }
 
 .nav .nav-divider {
@@ -6304,7 +6304,7 @@ a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #008cba;
+  border-color: #003f54;
 }
 
 .alert {
