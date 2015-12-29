@@ -82,7 +82,7 @@ class AuthController extends Controller
     protected function registerByReferrer($userId)
     {
         $cookie = cookie('referrer', $userId, 48*60);
-        return redirect('/register')->withCookie($cookie);
+        return redirect('/login')->withCookie($cookie);
     }
 
     public function showLoginForm()
