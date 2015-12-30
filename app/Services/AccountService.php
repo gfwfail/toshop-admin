@@ -9,8 +9,10 @@
 namespace App\Services;
 
 
+use App\User;
 use DB;
 use App;
+
 class AccountService
 {
 
@@ -27,26 +29,28 @@ class AccountService
             'updated_at'=>$time
         ]);
 
+
+
     }
 
 
-    public function refundToReferrer($userid,$amount,$discount) {
-
-        $user = \App::make('App\Repositories\Contracts\UserRepository');
-
-        $depth=['0.2','0.1','0.06','0.04','0.01'];
-
-        $referrer = $user->find($userid)->referrer;
-
-        $discount =  $discount>1?$discount/100:$discount;
+    public function refundToReferrer($userid,$amount) {
 
 
-        for ($i=0; $i<5; $i++) {
-            if  ($user->isExist($referrer)) {
+        $depth=['1','0.2','0.1','0.06','0.04'];
+        $this->debit($userid, 0 ,$amount ,' Cash back');
 
-                $this->debit($referrer,$userid,$amount*$discount*$depth[$i],'Cash back');
+        $referrer = User::find($userid)->referrer;
 
-                $referrer = $user->find($referrer)->referrer;
+
+
+
+        for ($i=1; $i<5; $i++) {
+            if  ( (User::whereId($referrer)->count())>0 ) {
+
+                $this->debit($referrer,$userid,$amount*$depth[$i],' Cash back');
+
+                $referrer = User::find($referrer)->referrer;
             }
             else {
                 break;
