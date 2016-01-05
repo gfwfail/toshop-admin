@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>@yield('title')</title>
-
     <meta name="description" content="Toshop.net ">
 
+    @yield("head")
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
@@ -44,7 +43,7 @@
                     <li><a @click="  (showModal = true )&& (signin($event))" href="/login">Sign In</a></li>
                     <li><a href="/login">Register</a></li>
                 @else
-                    <li><a href="/dashboard">Hello, {{auth()->user()->name}} </a></li>
+                    <li><a href="/user/dashboard">Hello, {{auth()->user()->name}} </a></li>
                     <li><a href="/logout">Log out</a></li>
                 @endif
             </ul>
@@ -138,7 +137,6 @@
 
 
     <script src="{{elixir('assets/js/app.js')}}" type="text/javascript"></script>
-    <!-- template for the modal component -->
-
+    @yield('foot')
 </body>
 </html>

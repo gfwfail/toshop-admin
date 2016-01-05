@@ -1,21 +1,7 @@
-@extends('layouts.home')
+@extends('layouts.user')
 
-@section('title')
-    User Dashboard
-@endsection
-@section('content')
-
+@section('panelcontent')
     @inject('account', 'App\Services\AccountService')
-
-    <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked">
-            <li role="presentation" class="active"><a href="/dashboard">Dashboard</a></li>
-            <li role="presentation"><a href="#">Withdraw</a></li>
-            <li role="presentation"><a href="#">Messages</a></li>
-        </ul>
-    </div>
-
-
 
     <div class="col-md-6">
         <table class="table table-striped">

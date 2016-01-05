@@ -20,7 +20,7 @@ class Admin
             return $next($request);
         } else {
             \Auth::logout();
-            return redirect("/auth/login")->withErrors("You are not authorized for this action");
+            return redirect("/login")->withErrors("You are not authorized for this action");
         }
     }
 }

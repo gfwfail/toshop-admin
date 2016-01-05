@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.2.5 on 2015-12-28.
+ * Generated for Laravel 5.2.5 on 2016-01-06.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11701,6 +11701,79 @@ namespace {
          */
         public static function getNames(){
             return \Illuminate\View\Factory::getNames();
+        }
+        
+    }
+
+
+    class Account extends \App\Facades\Account{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function debit($userId, $sourceId, $amount, $description){
+            return \App\Services\AccountService::debit($userId, $sourceId, $amount, $description);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function refundToReferrer($userid, $amount){
+            return \App\Services\AccountService::refundToReferrer($userid, $amount);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function balance($userId){
+            return \App\Services\AccountService::balance($userId);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function transactions($userId){
+            return \App\Services\AccountService::transactions($userId);
+        }
+        
+    }
+
+
+    class Stat extends \App\Facades\Stat{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function test(){
+            return \App\Services\StatService::test();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getDirectRefInWeek($userid){
+            return \App\Services\StatService::getDirectRefInWeek($userid);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getRefCount($userId){
+            return \App\Services\StatService::getRefCount($userId);
         }
         
     }

@@ -16,3 +16,10 @@ function sid_url($url,$sid,$name='sid')
 
     return $url;
 }
+
+function is_active($routeName,$classname = 'active')
+{
+    if (request()->route()->getName()==$routeName) {
+        return $classname;
+    }
+}
