@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Stat;
 
 class DashboardController extends Controller
 {
@@ -17,8 +18,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $stat = Stat::getAllRefCount();
         $goodsCount =  Good::count();
-        return view('dashboard.index',compact('goodsCount'));
+        return view('dashboard.index',compact('goodsCount','stat'));
     }
 
     /**

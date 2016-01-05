@@ -93,4 +93,15 @@ class StatService
 
         return $data;
     }
+
+    public function getAllRefCount()
+    {
+        $data = DB::table('user_closure')
+            ->groupBy('distance')
+            ->selectRaw('count(0) as count,distance')
+            ->get();
+
+
+        return $data;
+    }
 }

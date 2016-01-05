@@ -17,6 +17,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' =>  str_random(10),
         'password' => str_random(10),
         'remember_token' => str_random(10),
-        'referrer'=>App\User::count()?App\User::all()->random()->id:0
+        'referrer'=>App\User::count()?rand(1,10000):0
     ];
 });
