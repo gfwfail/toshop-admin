@@ -32,7 +32,7 @@
                  @endforeach
 
 
-                
+
 
                 @foreach($stat as $s)
                 {

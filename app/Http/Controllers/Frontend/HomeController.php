@@ -64,7 +64,8 @@ class HomeController extends Controller
         if (!$page) {
             return abort(404);
         }
-        return $page->content;
+        $data =  $page->content;
+        return view('home.page',compact('data'));
 
     }
     public function search($keyword)
