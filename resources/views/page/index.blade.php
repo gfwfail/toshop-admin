@@ -40,7 +40,7 @@
                                <td>
                                    <input type="text" class="form-control" value="http://www.toshop.net/pages/{{$page->slug}}" readonly style="width: 100%;">
                                            </td>
-                               <td>{{$page->content}}  </td>
+                               <td>  {{ str_limit($page->content) }} <span class="label bg-warning"> {{strlen($page->content).' Bytes'}} </span> </td>
 
                                <td>
                                    {!! Form::open(array('url' => 'pages/' . $page->id, 'class' => 'pull-right')) !!}
