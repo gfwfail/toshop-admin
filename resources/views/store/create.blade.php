@@ -61,14 +61,14 @@
 
                <div class="form-group{{ $errors->first('area', ' has-error') }}">
                    <label> Area </label>
-                   {!! Form::select('area[]',$area, $store->area ,['class'=>"form-control",'multiple'=>'multiple','id'=>'area'] ) !!}
+                   {!! Form::select('area[]',$area, null ,['class'=>"form-control",'multiple'=>'multiple','id'=>'area'] ) !!}
                </div>
 
                <div class="form-group{{ $errors->first('language', ' has-error') }}">
                    <label> Language </label>
-                   {!! Form::select('language[]',$language, $store->language ,['class'=>"form-control",'multiple'=>'multiple','id'=>'language'] ) !!}
+                   {!! Form::select('language[]',$language,null  ,['class'=>"form-control",'multiple'=>'multiple','id'=>'language'] ) !!}
                </div>
-               
+
 
                <div class="form-group{{ $errors->first('categories_id', ' has-error') }}">
                    <label> Category </label>
