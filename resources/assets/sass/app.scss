@@ -4,23 +4,36 @@
 @import "_bootswatch";
 $nav-background : $gray-dark;　
 
+.carousel-link {
+  text-decoration: none !important;
+  display: block;
+}
 
 .container {
   max-width: 780pt;
 }
+.navbar-brand > img {
+  margin:0;
+  padding: 0;
+}
+.navbar-default {
+  background: #fff;
+}
 
 .navbar-nav > li {
-  transition: background 0.5s;
-  &:hover {
-    background: $navbar-default-link-active-bg;
-  }
+  transition: color 0.5s;
+
 }
-.top-wrap {
+.body-wrap {
+  margin-top:120px;
+}
+.searchbar {
   width: 100%;
-  background: #f8f8f8;
   color: #666;
-  padding: 5px;
-  border-bottom: solid 1px #e8e8e8;
+  padding: 8px;
+  margin-top:50px;
+  background-color:#f8f8f8;
+  border-bottom:solid 1px #eee;
 }
 #top-search {
   width:300px;
@@ -186,12 +199,12 @@ $nav-background : $gray-dark;　
 
 .tt-menu { /* UPDATE: newer versions use tt-menu instead of tt-dropdown-menu */
   width: 300px;
-  margin-top: 12px;
-  padding: 8px 0;
+  margin-top: 4px;
+  padding: 4px 0;
   background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
+  border-radius: 0px;
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
@@ -215,3 +228,4 @@ $nav-background : $gray-dark;　
 .tt-suggestion p {
   margin: 0;
 }
+.twitter-typeahead{ float:left; width:100%}

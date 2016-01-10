@@ -4,12 +4,12 @@
     <div class="col-md-9">
         <div class="row">
             <div id="myCarousel" class="carousel slide">
-                <!-- 轮播（Carousel）指标 -->
+
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                 </ol>
-                <!-- 轮播（Carousel）项目 -->
+
                 <div class="carousel-inner">
                     <div class="item active">
                         <img src="/uploads/slide/1.jpg" alt="First slide">
@@ -19,7 +19,7 @@
                     </div>
 
                 </div>
-                <!-- 轮播（Carousel）导航 -->
+
                 <a class="carousel-control left" href="#myCarousel"
                    data-slide="prev">&lsaquo;</a>
                 <a class="carousel-control right" href="#myCarousel"
@@ -81,13 +81,17 @@
                             {!! ($i%5==0)? '<tr><td>':'<td>'!!}
 
                             @if ($store)
-                                <a href="{{$store->link}}">
+                                <a class="carousel-link" href="{{$store->link}}">
                                     @if ( file_exists(public_path('uploads/store/'.$store->id.'.jpg')) )
                                         <img width=100 height=80 src="/uploads/store/{{$store->id}}.jpg">
                                     @else
                                         <img src="http://placehold.it/100x80" width="100" height="80">
                                     @endif
-                                    <p>{{ $store->name }}</p>
+                                    <p>
+                                        {{ $store->name }}
+                                        <br>
+                                        <div class="text-warning">Up to {{$store->cashback}} Cash Back </div>
+                                    </p>
                                 </a>
                             @else
 

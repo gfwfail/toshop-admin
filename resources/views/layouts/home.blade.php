@@ -12,13 +12,9 @@
 
 </head>
 <body>
-<div class="top-wrap">
-    <div class="container">
-        About us
-    </div>
-</div>
 
-<nav class="navbar navbar-default navbar-fixed">
+
+<nav class="navbar navbar-default navbar-fixed-top">
 
     <div class="container">
         <div class="navbar-header">
@@ -31,11 +27,13 @@
             </button>
         </div>
 
+        <a class="pull-left" href="/"><img src="{{asset("assets/img/logo.png")}}"></a>
+
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="/deals">Deals</a></li>
-                <li><a href="/stores">Stores</a></li>
+                <li class="active"><a href="/stores">All Stores <span class="sr-only">(current)</span></a></li>
+                <li><a href="/coupons">Coupons</a></li>
+                <li><a href="/helps">Helps</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -52,25 +50,33 @@
 </nav>
 
 
-<div class="container">
+<div class="container-fluid searchbar navbar-fixed-top">
     <div class="row">
-        <div class="col-md-3">
-            <a href="/"> <img src="{{asset("assets/img/logo.png")}}"> </a>
+        <form role="search" method="get" action="/">
+        <div class="col-md-12">
+            <div class="col-md-3">
+
+            </div>
+           <div class="col-md-6">
+
+                   <div class="input-group">
+                       <input type="text" name="keyword" class="form-control typeahead"
+                              placeholder="Search for stores">
+                    <span class="input-group-btn">
+                    <button type="submit" class="btn btn-success"><span
+                                class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+                    </button>
+                    </span>
+                   </div>
+
+           </div>
         </div>
-        <div class="col-md-9">
-            <form class="navbar-form navbar-left" role="search" method="get" action="/">
-                <div class="form-group">
-                    <input type="text" name="keyword" id="top-search" class="form-control typeahead"
-                           placeholder="Search for stores">
-                </div>
-                <button type="submit" class="btn btn-success">   <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
-            </form>
-        </div>
+        </form>
     </div>
 </div>
 
 
-<div class="container">
+<div class="container body-wrap">
 
     <ul class="breadcrumb">
         <li><a href="/">Home</a></li>
@@ -83,7 +89,8 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p style="color:#666"> <i class="fa fa-copyright"></i> 2015-2016 Toshop.net | Terms of Service | Privacy Policy
+                <p style="color:#666"><i class="fa fa-copyright"></i> 2015-2016 Toshop.net | Terms of Service | Privacy
+                    Policy
                 </p>
 
 
@@ -130,13 +137,12 @@
     </script>
 
 
-
     <modal :show.sync="showModal">
 
     </modal>
 
 
     <script src="{{elixir('assets/js/app.js')}}" type="text/javascript"></script>
-    @yield('foot')
+@yield('foot')
 </body>
 </html>
