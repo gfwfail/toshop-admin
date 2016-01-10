@@ -1,7 +1,7 @@
 @extends('layouts.home')
 @section('content')
 <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-10">
         <div class="row">
             <div id="myCarousel" class="carousel slide">
 
@@ -12,10 +12,10 @@
 
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="/uploads/slide/1.jpg" alt="First slide">
+                        <img  class="carousel-ad" src="/assets/img/c1.jpg" alt="First slide">
                     </div>
                     <div class="item">
-                        <img src="/uploads/slide/2.jpg" alt="Second slide">
+                        <img  class="carousel-ad" src="/assets/img/c1.jpg" alt="First slide">
                     </div>
 
                 </div>
@@ -26,46 +26,30 @@
                    data-slide="next">&rsaquo;</a>
             </div>
         </div>
-        <div class="row" style="background:#f8f8f8;">
-            <div class="col-md-4">
-                <span class="carousel-ad-text">10000+ Registered User</span>
-            </div>
-            <div class="col-md-4">
-                1000+ Stores
-            </div>
-            <div class="col-md-4">
-                Earn up to 30% cash back
-            </div>
-
-        </div>
 
     </div>
-    <div class="col-md-3">
-        <div class="well bs-component">
-
-            <fieldset>
-                <legend>Sign in</legend>
-                <div class="form-group">
-
-                    <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-success pull-left" id="submit" value="Login">Login</button>
-                    &nbsp;
-                    <button type="button" class="btn btn-default" id="submit" value="Login">Forgot</button>
-                </div>
-
-            </fieldset>
-
+    <div class="col-md-2">
+        <table class="table table-bordered ">
+            <tr>
+                <td> a</td>
+            </tr>
+            <tr>
+                <td> a</td>
+            </tr>
+            <tr>
+                <td> a</td>
+            </tr>
+            <tr>
+                <td> a</td>
+            </tr>
+            </table>
+        <div class="text-muted small">
+            Coupons & promo codes with Cash Back
         </div>
 
     </div>
 </div>
+<br>
 <div class="row">
     <div id="storesCarousel" class="carousel slide">
 
@@ -74,7 +58,7 @@
             @for ($slides = 0; $slides < ceil($stores->count()/5); $slides++)
                 <div class="item{{($slides==0)?' active':''}}">
 
-                    <table class="table table-hover  table-bordered store-table ">
+                    <table class="table table-bordered table-responsive store-table ">
                         <?php $i = 0;?>
 
                         @foreach ($storeSlide as $store )
@@ -82,16 +66,17 @@
 
                             @if ($store)
                                 <a class="carousel-link" href="{{$store->link}}">
+                                    <div class="carousel-img">
                                     @if ( file_exists(public_path('uploads/store/'.$store->id.'.jpg')) )
                                         <img width=100 height=80 src="/uploads/store/{{$store->id}}.jpg">
                                     @else
                                         <img src="http://placehold.it/100x80" width="100" height="80">
                                     @endif
-                                    <p>
-                                        {{ $store->name }}
-                                        <br>
-                                        <div class="text-warning">Up to {{$store->cashback}} Cash Back </div>
-                                    </p>
+                                    </div>
+
+                                       <div class="text-primary carousel-text"> {{ $store->name }}  </div>
+                                        <div class="text-danger carousel-text">Up to {{$store->cashback?:'$0'}} Cash Back </div>
+
                                 </a>
                             @else
 
@@ -117,15 +102,25 @@
 
 </div>
 
-
 <div class="row">
-    <div class="col-md-12">
-        <blockquote>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-        </blockquote>
+    <div class="col-md-2-4">
+        ss
     </div>
+    <div class="col-md-2-4">
+        ss
+    </div>
+    <div class="col-md-2-4">
+        ss
+    </div>
+    <div class="col-md-2-4">
+        ss
+    </div>
+    <div class="col-md-2-4">
+        ss
+    </div>
+
 </div>
+
 
 
 <div class="row">

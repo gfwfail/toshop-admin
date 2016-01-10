@@ -14,7 +14,7 @@
 <body>
 
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
 
     <div class="container">
         <div class="navbar-header">
@@ -37,6 +37,9 @@
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="#" id="searchicon" class="glyphicon glyphicon-search"> </a>
+                </li>
                 @if(! auth()->user())
                     <li><a @click="  (showModal = true )&& (signin($event))" href="/login">Sign In</a></li>
                     <li><a href="/login">Register</a></li>
@@ -78,10 +81,7 @@
 
 <div class="container body-wrap">
 
-    <ul class="breadcrumb">
-        <li><a href="/">Home</a></li>
-        <li class="active">Page</li>
-    </ul>
+
     @yield('content')
 
 
@@ -141,8 +141,13 @@
 
     </modal>
 
-
     <script src="{{elixir('assets/js/app.js')}}" type="text/javascript"></script>
+    <script>
+
+
+
+
+    </script>
 @yield('foot')
 </body>
 </html>
