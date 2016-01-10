@@ -3,6 +3,9 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "_bootswatch";
 $nav-background : $gray-dark;　
+.navbar-toggle {
+  background: $brand-primary;
+}
 body{
   background: #f8f8f8;
 }

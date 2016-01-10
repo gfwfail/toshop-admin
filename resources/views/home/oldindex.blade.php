@@ -58,7 +58,7 @@
             @for ($slides = 0; $slides < ceil($stores->count()/5); $slides++)
                 <div class="item{{($slides==0)?' active':''}}">
 
-                    <table class="table table-bordered table-responsive store-table ">
+                    <table class="table table-bordered table-responsive store-table visible-sm visible-md visible-lg">
                         <?php $i = 0;?>
 
                         @foreach ($storeSlide as $store )
@@ -68,9 +68,9 @@
                                 <a class="carousel-link" href="{{$store->link}}">
                                     <div class="carousel-img">
                                     @if ( file_exists(public_path('uploads/store/'.$store->id.'.jpg')) )
-                                        <img width=100 height=80 src="/uploads/store/{{$store->id}}.jpg">
+                                        <img src="/uploads/store/{{$store->id}}.jpg">
                                     @else
-                                        <img src="http://placehold.it/100x80" width="100" height="80">
+                                        <img src="http://placehold.it/100x80" >
                                     @endif
                                     </div>
 
@@ -126,12 +126,12 @@
 <div class="row">
     <div class="col-md-9">
         <div class="row good-list">
-            <div class="col-md-3">
+            <div class="col-md-3 col-xs-3">
                 <p class="good-img">
-                    <img src="http://placehold.it/100x80">
+                    <img class="img-responsive" src="http://placehold.it/100x80">
                 </p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6  col-xs-5">
                 <h3>Macbook </h3>
 
                 <p>xsxa</p>
@@ -143,7 +143,7 @@
 
                 </p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-xs-4">
                 <p class="good-action">
 
                 <div class="form-group">

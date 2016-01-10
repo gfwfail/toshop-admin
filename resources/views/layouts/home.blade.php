@@ -18,6 +18,7 @@
 
     <div class="container">
         <div class="navbar-header">
+            <a class="pull-left" href="/"><img class="img-responsive" src="{{asset("assets/img/logo.png")}}"></a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -27,7 +28,6 @@
             </button>
         </div>
 
-        <a class="pull-left" href="/"><img src="{{asset("assets/img/logo.png")}}"></a>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">

@@ -8608,6 +8608,10 @@ a.list-group-item-danger.active:focus {
   color: #222222;
 }
 
+.navbar-toggle {
+  background: #2980b9;
+}
+
 body {
   background: #f8f8f8;
 }
