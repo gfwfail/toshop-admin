@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Deal;
 use App\Page;
 use App\Store;
 use Illuminate\Http\Request;
@@ -26,8 +27,9 @@ class HomeController extends Controller
              }
          }
 
+        $dealsCard = Deal::available()->limit(5)->get();
 
-        return view('home.oldindex',compact('stores','storeSlide'));
+        return view('home.oldindex',compact('stores','storeSlide','dealsCard'));
 
     }
     public function index(Request $request)
@@ -41,6 +43,8 @@ class HomeController extends Controller
             $stores = Store::orderBy('name')->get();
 
         }
+
+
 
        /* $storeSlide = [];
         for ($i=0;$i<10;$i++) {

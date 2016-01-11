@@ -3,9 +3,9 @@
 
 
 
-Route::get('/asa',['middleware'=>'auth',function () {
+Route::get('/a',['',function () {
 
-    return 1;
+    return \App\Deal::available()->get();
 }]);
 Route::group(['middleware' => 'web','domain'=>env('ADMIN_DOMAIN','admin.cp.dev')] , function(){
     Route::get('/login', 'Auth\AuthController@getLogin');
@@ -28,6 +28,8 @@ Route::group( ['middleware' => ['auth','admin']],function () {
     Route::resource('categories', 'CategoriesController');
     Route::resource('stories', 'StoriesController');
     Route::resource('goods', 'GoodsController');
+    Route::resource('deals', 'DealsController');
+
     Route::resource('pages', 'PagesController');
 
 

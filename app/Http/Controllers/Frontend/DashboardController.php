@@ -17,7 +17,6 @@ class DashboardController extends Controller
 {
     function index()
     {
-
         return view('home.user.dashboard');
     }
 

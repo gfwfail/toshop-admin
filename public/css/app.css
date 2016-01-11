@@ -8633,8 +8633,8 @@ body {
 .col-md-2-4 {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 @media (min-width: 992px) {
@@ -8656,6 +8656,40 @@ body {
     float: left;
     width: 20%;
   }
+}
+
+.deal-card {
+  background: #fff;
+  border: solid 1px #eee;
+  height: 350px;
+  width: 100%;
+  padding: 0px;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.deal-card-head {
+  height: 150px;
+  max-height: 150px;
+  border-bottom: solid 1px #eee;
+}
+
+.deal-card-logo {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px #eee;
+  left: 15%;
+  width: 70%;
+  height: 60px;
+  top: 120px;
+  background: #fff;
+}
+
+.deal-card-content {
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
 }
 
 table,
@@ -8708,6 +8742,7 @@ th {
 
 .body-wrap {
   margin-top: 120px;
+  max-width: 1000px;
 }
 
 .searchbar {

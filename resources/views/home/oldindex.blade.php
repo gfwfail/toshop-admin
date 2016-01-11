@@ -103,25 +103,45 @@
 </div>
 
 <div class="row">
+    @foreach($dealsCard as $card)
     <div class="col-md-2-4">
-        ss
+       <div class="deal-card">
+           <div class="deal-card-logo visible-lg visible-md">
+               @if ( file_exists(public_path('uploads/store/'.$card->store->id.'.jpg')) )
+                   <img src="/uploads/store/{{$card->store->id}}.jpg">
+               @else
+
+               @endif
+           </div>
+           <div class="deal-card-head"
+                style="background-image:url(<?php
+               echo (file_exists(public_path('uploads/deal/'.$card->id.'.jpg'))? '/uploads/deal/'.$card->id.'.jpg':'http://placehold.it/150x200')
+           ?>)">
+
+           </div>
+
+           <div class="deal-card-content">
+            <div class="text-danger">{{$card->name}} </div>
+
+               {!! $card->description !!}
+
+               <small class="text-muted small"><i class="glyphicon glyphicon-time"></i> Expires {{$card->expired_at}}</small>
+               @if($card->code)
+               <p>
+                   Code:<span class="text-success"> {{$card->code}} </span>
+               </p>
+                   <p>
+                       <a href="{{$card->store->link}}" class="btn btn-danger btn-sm">Shop Now</a>
+                   </p>
+               @endif
+           </div>
+       </div>
     </div>
-    <div class="col-md-2-4">
-        ss
-    </div>
-    <div class="col-md-2-4">
-        ss
-    </div>
-    <div class="col-md-2-4">
-        ss
-    </div>
-    <div class="col-md-2-4">
-        ss
-    </div>
+        @endforeach
 
 </div>
 
-
+<hr>
 
 <div class="row">
     <div class="col-md-9">

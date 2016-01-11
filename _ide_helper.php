@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.2.5 on 2016-01-06.
+ * Generated for Laravel 5.2.5 on 2016-01-10.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11774,6 +11774,15 @@ namespace {
          */
         public static function getRefCount($userId){
             return \App\Services\StatService::getRefCount($userId);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getAllRefCount(){
+            return \App\Services\StatService::getAllRefCount();
         }
         
     }
