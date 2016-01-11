@@ -108,7 +108,7 @@
        <div class="deal-card">
            <div class="deal-card-logo visible-lg visible-md">
                @if ( file_exists(public_path('uploads/store/'.$card->store->id.'.jpg')) )
-                   <img src="/uploads/store/{{$card->store->id}}.jpg">
+                   <img class="img-responsive" src="/uploads/store/{{$card->store->id}}.jpg">
                @else
 
                @endif
