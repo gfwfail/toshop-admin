@@ -85,6 +85,15 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
     Route::get('/pages/{slug}', [
         'as' => 'home', 'uses' => 'HomeController@displayPageBySlug'
     ]);
+
+    Route::get('/plain/{slug}', [
+        'as' => 'home', function($slug){
+            $page = App\Page::whereSlug( trim($slug) )->first();
+
+            return $page->content;
+        }
+    ]);
+
     Route::get('/promo/boxun-right' ,function() {
         return '
         <!DOCTYPE html>
