@@ -90,6 +90,10 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
         'as' => 'home', 'uses' => 'HomeController@index'
     ]);
 
+    Route::get('/stores', [
+        'as' => 'home', 'uses' => 'HomeController@index'
+    ]);
+
     Route::get('/pages/{slug}', [
         'as' => 'home', 'uses' => 'HomeController@displayPageBySlug'
     ]);
