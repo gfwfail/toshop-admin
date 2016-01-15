@@ -120,7 +120,7 @@
                    Code:<span class="text-success"> {{$card->code}} </span>
                </p>
                    <p>
-                       <a href="{{$card->store->link}}" class="btn btn-danger btn-sm">Shop Now</a>
+                       <a href="{{$card->store->sidlink}}" class="btn btn-danger btn-sm">Shop Now</a>
                    </p>
                @endif
            </div>
@@ -137,39 +137,54 @@
 <div class="row">
 
     <div class="col-md-9">
+
+        @foreach($dealsCard as $card)
+
+
         <div class="row good-list">
             <div class="col-md-3 col-xs-3">
                 <p class="good-img">
-                    <img class="img-responsive" src="http://placehold.it/100x80">
+
+                    @if ( file_exists(public_path('uploads/store/'.$card->store->id.'.jpg')) )
+                        <img src="/uploads/store/{{$card->store->id}}.jpg">
+                    @else
+
+                    @endif
+
                 </p>
             </div>
             <div class="col-md-6  col-xs-5">
-                <h3>Macbook </h3>
+                <h3>{{$card->name}}  </h3>
 
-                <p>xsxa</p>
+                <p>{!! $card->description !!} </p>
 
-                <p><span class="text-warning">6%</span>
-                    |
+                <p><span class="text-warning">{{$card->store->cashback?$card->store->cashback.'|':''}} </span>
+
                     <span class="text-muted">Store:</span>
-                    <span class="text-primary">Apple</span>
+                    <span class="text-primary">{{$card->store->name}} </span>
 
                 </p>
             </div>
             <div class="col-md-3 col-xs-4">
                 <p class="good-action">
 
+                @if($card->code)
                 <div class="form-group">
                     <span>Coupon Code</span><input type="text" name="couponcode"
-                                                   class="form-control input-sm couponcode" value="teysuao" readonly
+                                                   class="form-control input-sm couponcode" value="{{$card->code}} " readonly
                                                    style="background: #fff">
 
                 </div>
+                @endif
 
                 <button class="btn btn-sm btn-success">Go shopping!</button>
 
                 </p>
             </div>
         </div>
+
+        @endforeach
+
     </div>
 
 
