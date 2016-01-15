@@ -41,12 +41,11 @@ body{
     width:70%;
     height:60px;
     top:120px;
-    background: #fff;
-    & img{
-      display: inline-block;
-      vertical-align: middle;
-      border:solid 1px #eee;
-    }
+    background-color: #fff;
+    border:solid 1px #f8f8f8;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   &-content {
     text-align: center;

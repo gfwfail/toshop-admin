@@ -95,12 +95,12 @@
     @foreach($dealsCard as $card)
     <div class="col-md-2-4">
        <div class="deal-card">
-           <div class="deal-card-logo visible-lg visible-md">
+           <div class="deal-card-logo visible-lg visible-md"
                @if ( file_exists(public_path('uploads/store/'.$card->store->id.'.jpg')) )
-                   <img class="img-responsive" src="/uploads/store/{{$card->store->id}}.jpg">
+                  style="background-image: url('/uploads/store/{{$card->store->id}}.jpg')"
                @else
 
-               @endif
+               @endif >
            </div>
            <div class="deal-card-head"
                 style="background-image:url(<?php
