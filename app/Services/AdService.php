@@ -12,9 +12,21 @@ class AdService
 
     public function show($slug)
     {
+
+
         $page = App\Page::whereSlug($slug)->first();
 
-        return $page?$page->content:$slug.' not defined';
+
+        if (!$page){
+            return $slug.' not defined.';
+        }
+
+        $content = $page->content;
+
+
+        $content = preg_replace_callback('[store-(\w*)=(\d*)]',"store_info",$content);
+
+        return $content;
     }
 
 }
