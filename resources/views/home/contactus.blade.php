@@ -6,22 +6,25 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-            @if(Session::get('ok'))
-                <div class="alert alert-info">
-                    Thank you very much for your enquiry. Our customer relations manager will get in touch with you
-                    shortly
-                </div>
-            @endif
-            @foreach($errors->all() as $error)
-                <div class="alert alert-danger">{{$error}}</div>
-            @endforeach
 
-        </div>
-    </div>
     <div class="row contactus">
+
         <div class="white-wrap  col-md-10 col-md-offset-1">
+
+            <div class="col-lg-8 col-lg-offset-2">
+                <br>
+                @if(Session::get('ok'))
+                    <div class="alert alert-info">
+                        Thank you very much for your enquiry. Our customer relations manager will get in touch with you
+                        shortly
+                    </div>
+                @endif
+                @foreach($errors->all() as $error)
+                    <div class="alert alert-danger">{{$error}}</div>
+                @endforeach
+
+            </div>
+
  <br>
         <?php
             $user = auth()->user();
