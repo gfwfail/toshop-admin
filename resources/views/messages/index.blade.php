@@ -13,7 +13,6 @@
 
 @section('content')
 
-    <h1>Messages <a href="{{ url('messages/create') }}" class="btn btn-primary pull-right btn-sm">Add New Message</a></h1>
     <div class="table">
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -29,8 +28,8 @@
                     <td>{{ $x }}</td>
                     <td><a href="{{ url('messages', $item->id) }}">{{ $item->name }}</a></td><td>{{ $item->email }}</td><td>{{ $item->phone }}</td>
                     <td>
-                        <a class="btn btn-primary btn-xs" href="{{ url('messages/' . $item->id . '/edit') }}">
-                           Update
+                        <a class="btn btn-primary btn-xs" href="{{ url('messages/' . $item->id) }}">
+                           Show
                         </a> /
                         {!! Form::open([
                             'method'=>'DELETE',

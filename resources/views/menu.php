@@ -46,15 +46,13 @@
         </li>
 
         <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#goods"><i class="fa fa-fw fa-shopping-cart"></i>
-                Goods <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="goods" class="collapse">
+            <a href="javascript:;" data-toggle="collapse" data-target="#messages"><i class="fa fa-fw fa-book"></i>
+                Messages <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="messages" class="collapse">
                 <li>
-                    <a href="/goods/">Good List</a>
+                    <a href="/messages/">Messages List</a>
                 </li>
-                <li>
-                    <a href="/goods/create">Add new good</a>
-                </li>
+
             </ul>
         </li>
 
@@ -70,6 +68,7 @@
                 </li>
             </ul>
         </li>
+
 
 
     </ul>
