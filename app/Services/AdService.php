@@ -24,7 +24,7 @@ class AdService
         $content = $page->content;
 
 
-        $content = preg_replace_callback('[store-(\w*)=(\d*)]',"store_info",$content);
+        $content = preg_replace_callback('%%store-(\w*)=(\d*)%%',"store_info",$content);
 
         return $content;
     }
