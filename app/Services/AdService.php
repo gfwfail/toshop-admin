@@ -35,7 +35,7 @@ class AdService
 
       //  return $this->parse($slug);
         return Cache::remember(
-            'AD-SLUG-'.$slug,
+            'AD-SLUG-'.$slug.auth()->user()?:auth()->user()->id,
             5,
             function () use ($slug)
             {
