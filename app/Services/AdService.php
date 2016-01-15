@@ -32,7 +32,7 @@ class AdService
     public function show($slug)
     {
         return Cache::remember(
-            'AD-SLUG-'.$slug,
+            'AD-SLUG-'.md5(json_encode($slug)),
             10,
             function () use ($slug)
             {
