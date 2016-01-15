@@ -90,7 +90,7 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                {{AD::show('foot')}}
+                {!! Ad::show('foot') !!}
                 <p style="color:#666"><i class="fa fa-copyright"></i> 2015-2016 Toshop.net |
                     <a href="/pages/terms.html">Terms of Service</a> |
                     <a href="/pages/privacy.html">Privacy Policy</a> |
