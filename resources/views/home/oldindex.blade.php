@@ -42,28 +42,34 @@
     <div id="storesCarousel" class="carousel slide">
 
         <!-- 轮播（Carousel）项目 -->
+        <?php $slides= 0 ?>
         <div class="carousel-inner">
-            @for ($slides = 0; $slides < ceil($stores->count()/5); $slides++)
+
+
+            @foreach ($stores as $storeSlide)
                 <div class="item{{($slides==0)?' active':''}}">
+                    <?php $slides++ ?>
 
                     <table class="table table-bordered table-responsive store-table visible-sm visible-md visible-lg">
                         <?php $i = 0;?>
 
                         @foreach ($storeSlide as $store )
+
                             {!! ($i%5==0)? '<tr><td>':'<td>'!!}
 
                             @if ($store)
-                                <a class="carousel-link" href="{{$store->link}}">
+
+                                <a class="carousel-link" href="{{$store['link']}}">
                                     <div class="carousel-img">
-                                    @if ( file_exists(public_path('uploads/store/'.$store->id.'.jpg')) )
-                                        <img src="/uploads/store/{{$store->id}}.jpg">
+                                    @if ( file_exists(public_path('uploads/store/'.$store['id'].'.jpg')) )
+                                        <img src="/uploads/store/{{$store['id']}}.jpg">
                                     @else
                                         <img src="http://placehold.it/100x80" >
                                     @endif
                                     </div>
 
-                                       <div class="text-primary carousel-text"> {{ $store->name }}  </div>
-                                        <div class="text-danger carousel-text">Up to {{$store->cashback?:'$0'}} Cash Back </div>
+                                       <div class="text-primary carousel-text"> {{ $store['name'] }}  </div>
+                                        <div class="text-danger carousel-text">Up to {{$store['cashback']?:'$0'}} Cash Back </div>
 
                                 </a>
                             @else
@@ -77,7 +83,7 @@
                     </table>
                 </div>
 
-            @endfor
+            @endforeach
 
         </div>
         <!-- 轮播（Carousel）导航 -->

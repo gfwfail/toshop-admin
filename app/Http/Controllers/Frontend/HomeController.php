@@ -32,17 +32,21 @@ class HomeController extends Controller
 
     public function extrabux()
     {
-        $stores = Store::orderBy('name')->get();
-         $storeSlide = [];
-         for ($i=0;$i<10;$i++) {
 
-             if (isset($stores[$i])) {
-                 $storeSlide[$i] = $stores[$i];
-                 }
-             else {
-                 $storeSlide[$i] = '';
-             }
-         }
+        $p=10;
+        $stores = Store::orderBy('name')->get()->toArray();
+
+        $fillnum = ($p-sizeof($stores)%$p);
+
+
+
+        for($i=0;$i<$fillnum;$i++){
+            $stores[]=0;
+        }
+
+        $stores = array_chunk($stores, $p);
+
+
 
         $dealsCard = Deal::available()->limit(5)->get();
 
