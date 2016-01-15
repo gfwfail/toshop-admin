@@ -20,6 +20,8 @@ function sid_url($url,$sid,$name='sid')
 function store_info($matches)
 {
 
+//    dd($matches);
+
     try {
     $store =  \App\Store::find($matches[2]);
     return $store->$matches[1];
