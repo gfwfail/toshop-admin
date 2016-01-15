@@ -148,6 +148,7 @@ return [
         App\Providers\HelperServiceProvider::class,
         App\Providers\ToshopServiceProvider::class,
 
+        Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
         Ender\UEditor\UEditorServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
@@ -208,6 +209,7 @@ return [
 
         'Account'   => App\Facades\Account::class,
         'Stat'      => App\Facades\Stat::class,
+        'Ad'      => App\Facades\Ad::class,
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,

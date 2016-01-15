@@ -29,26 +29,14 @@
 
     </div>
     <div class="col-md-2">
-        <table class="table table-bordered ">
-            <tr>
-                <td> a</td>
-            </tr>
-            <tr>
-                <td> a</td>
-            </tr>
-            <tr>
-                <td> a</td>
-            </tr>
-            <tr>
-                <td> a</td>
-            </tr>
-            </table>
+       {{Ad::show('banner_right')}}
         <div class="text-muted small">
             Coupons & promo codes with Cash Back
         </div>
 
     </div>
 </div>
+{{Ad::show('banner_bottom')}}
 <br>
 <div class="row">
     <div id="storesCarousel" class="carousel slide">
@@ -101,6 +89,7 @@
 
 
 </div>
+{{Ad::show('store_list_bottom')}}
 
 <div class="row">
     @foreach($dealsCard as $card)
@@ -141,9 +130,12 @@
 
 </div>
 
+{{Ad::show('card_list_bottom')}}
+
 <hr>
 
 <div class="row">
+
     <div class="col-md-9">
         <div class="row good-list">
             <div class="col-md-3 col-xs-3">
@@ -186,6 +178,7 @@
         <div class="panel panel-default">
             <div class="panel-heading"><span class="border-bot">Toshop Blog</span></div>
             <div class="panel-body">
+                {{Ad::show('blog')}}
                 <ul class="list-unstyled">
                     <li><a href="#"> link1 </a></li>
                     <li><a href="#"> link1 </a></li>

@@ -1,0 +1,40 @@
+@extends('admin')
+
+@section('title') %%crudName%% Homepage @endsection @section('heading') %%crudName%% @endsection
+
+@section('breadcrumb')
+
+    <li><a href="/home">Home</a></li>
+    <li><a href="%%routeGroup%%%%crudName%%">%%crudName%%</a></li>
+    <li><a href="%%routeGroup%%%%crudName%%/create">Create</a></li>
+
+
+@endsection
+
+@section('content')
+    <div class="row">
+
+   <div class="col-lg-12">
+
+       <div class="panel panel-default">
+           <div class="panel-heading"> </div> <!-- /.panel-heading -->
+           <div class="panel-body">
+    {!! Form::open(['url' => '%%routeGroup%%%%crudName%%', 'class' => 'form-horizontal']) !!}
+
+    %%formFieldsHtml%%
+
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-3">
+            {!! Form::submit('Create', ['class' => 'btn btn-primary form-control']) !!}
+        </div>
+    </div>
+    {!! Form::close() !!}
+
+
+   </div>
+
+    </div>
+    </div>
+    </div>
+
+@endsection

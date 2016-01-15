@@ -33,7 +33,8 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/stores">All Stores <span class="sr-only">(current)</span></a></li>
                 <li><a href="/coupons">Coupons</a></li>
-                <li><a href="/helps">Helps</a></li>
+                <li><a href="/pages/helps.html">Helps</a></li>
+                <li><a href="/pages/contact.html">Contact Us</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -89,8 +90,12 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p style="color:#666"><i class="fa fa-copyright"></i> 2015-2016 Toshop.net | Terms of Service | Privacy
-                    Policy
+                {{AD::show('foot')}}
+                <p style="color:#666"><i class="fa fa-copyright"></i> 2015-2016 Toshop.net |
+                    <a href="/pages/terms.html">Terms of Service</a> |
+                    <a href="/pages/privacy.html">Privacy Policy</a> |
+                    <a href="/pages/aboutus.html">About us</a>
+
                 </p>
 
 

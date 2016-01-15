@@ -1,0 +1,32 @@
+@extends('admin')
+
+@section('title') %%crudName%% Homepage @endsection @section('heading') %%crudName%% @endsection
+
+@section('breadcrumb')
+
+    <li><a href="/home">Home</a></li>
+    <li><a href="%%routeGroup%%%%crudName%%">%%crudName%%</a></li>
+    <li><a href="%%routeGroup%%%%crudName%%/%{{$%%crudNameSingular%%->id}}">Show</a></li>
+
+
+@endsection
+
+@section('content')
+
+    <h1>%%modelName%%</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID.</th> %%formHeadingHtml%%
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ $%%crudNameSingular%%->id }}</td> %%formBodyHtml%%
+                </tr>
+            </tbody>    
+        </table>
+    </div>
+
+@endsection

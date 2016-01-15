@@ -39,5 +39,10 @@ class ToshopServiceProvider extends ServiceProvider
             return new App\Services\StatService;
         });
 
+        App::bind('AdService', function()
+        {
+            return new App\Services\AdService;
+        });
+
     }
 }
