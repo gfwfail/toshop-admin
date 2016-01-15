@@ -32,10 +32,11 @@ class AdService
     public function show($slug)
     {
 
-        return $this->parse($slug);
+
+      //  return $this->parse($slug);
         return Cache::remember(
-            'AD-SLUG-'.md5(json_encode($slug)),
-            0,
+            'AD-SLUG-'.$slug,
+            5,
             function () use ($slug)
             {
                 return call_user_func_array(
