@@ -8868,6 +8868,15 @@ th {
   border-bottom: solid 4px #E79E42;
 }
 
+.contactus {
+  padding: 10px;
+}
+
+.white-wrap {
+  background-color: #fff;
+  border: solid 1px #eee;
+}
+
 .modal-mask {
   position: fixed;
   z-index: 9998;

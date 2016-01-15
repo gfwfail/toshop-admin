@@ -10,6 +10,7 @@ body{
   background: #f8f8f8;
 }
 
+
 .col-lg-2-4{
   @include make-lg-column(2.4)
 }
@@ -211,7 +212,15 @@ table,tr,td,th {
     padding-bottom: 4px;
     border-bottom: solid 4px #E79E42;
 }
+.contactus {
+  padding:10px;
+}
 
+.white-wrap {
+  background-color: #fff;
+  border:solid 1px #eee;
+
+}
 .modal-mask {
   position: fixed;
   z-index: 9998;

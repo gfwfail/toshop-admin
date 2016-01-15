@@ -34,7 +34,7 @@
                 <li class="active"><a href="/stores">All Stores <span class="sr-only">(current)</span></a></li>
                 <li><a href="/coupons">Coupons</a></li>
                 <li><a href="/pages/helps.html">Helps</a></li>
-                <li><a href="/pages/contact.html">Contact Us</a></li>
+                <li><a href="/home/contactus">Contact Us</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -110,7 +110,7 @@
                 <div class="modal-container">
                     <h3>Sign in</h3>
                     <hr>
-                    <form role="form" action="login" method="post" data-toggle="validator">
+                    <form role="form" action="/login" method="post" data-toggle="validator">
                         {!! csrf_field() !!}
                         <fieldset>
                             <div class="form-group">

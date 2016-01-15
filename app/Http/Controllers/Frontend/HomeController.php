@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Deal;
+use App\Message;
 use App\Page;
 use App\Store;
 use Illuminate\Http\Request;
@@ -12,6 +13,22 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+
+    public function getContactus()
+    {
+        return view('home.contactus');
+    }
+
+
+    public function postContactus(Request $request)
+    {
+        $this->validate($request, ['email' => 'required','body'=>'required' ]);
+
+        Message::create($request->all());
+
+        return redirect('home/contactus')->with('ok','done');
+    }
+
 
     public function extrabux()
     {

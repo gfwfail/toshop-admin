@@ -29,7 +29,7 @@ Route::group( ['middleware' => ['auth','admin']],function () {
     Route::resource('stories', 'StoriesController');
     Route::resource('goods', 'GoodsController');
     Route::resource('deals', 'DealsController');
-
+    Route::resource('messages', 'MessagesController');
     Route::resource('pages', 'PagesController');
 
 
@@ -54,6 +54,14 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
     });
     Route::get('/', [
         'as' => 'home', 'uses' => 'HomeController@index'
+    ]);
+
+    Route::get('/home/contactus', [
+        'as' => 'home', 'uses' => 'HomeController@getContactus'
+    ]);
+
+    Route::post('/home/contactus', [
+        'as' => 'home', 'uses' => 'HomeController@postContactus'
     ]);
 
 
