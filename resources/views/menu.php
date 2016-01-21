@@ -82,6 +82,12 @@
 
             </ul>
         </li>
+
+        <li>
+            <a href="/transactions"><i class="fa fa-fw fa-book"></i>
+                Transactions </a>
+
+        </li>
     </ul>
 </div>
 <!-- /.navbar-collapse -->

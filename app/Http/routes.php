@@ -25,6 +25,10 @@ Route::group( ['middleware' => ['auth','admin']],function () {
         'as' => 'goods', 'uses' => 'GoodsController@index'
     ]);
 
+    Route::get('/transactions', [
+        'as' => 'transactions', 'uses' => 'TransactionsController@index'
+    ]);
+
     Route::resource('categories', 'CategoriesController');
     Route::resource('stories', 'StoriesController');
     Route::resource('goods', 'GoodsController');
