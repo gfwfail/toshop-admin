@@ -152,7 +152,7 @@
                 <p class="good-img">
 
                     @if ( file_exists(public_path('uploads/store/'.$card->store->id.'.jpg')) )
-                        <img src="/uploads/store/{{$card->store->id}}.jpg">
+                        <img class="img-responsive" src="/uploads/store/{{$card->store->id}}.jpg">
                     @else
 
                     @endif
@@ -183,7 +183,7 @@
                 </div>
                 @endif
 
-                <button class="btn btn-sm btn-success">Go shopping!</button>
+                <a target="_blank" href="{{$card->store->sidlink}}" class="btn btn-sm btn-success">Go shopping!</a>
 
                 </p>
             </div>
