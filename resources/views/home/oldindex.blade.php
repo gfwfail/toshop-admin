@@ -98,7 +98,13 @@
 {!! Ad::show('store_list_bottom') !!}
 
 <div class="row">
+    <?php $cardN = 0; ?>
     @foreach($dealsCard as $card)
+        <?php $cardN++;
+            if ($cardN>=5) {
+                break;
+            }
+            ?>
     <div class="col-md-2-4">
        <div class="deal-card">
            <div class="deal-card-logo visible-lg visible-md"

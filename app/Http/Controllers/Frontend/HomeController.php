@@ -44,7 +44,7 @@ class HomeController extends Controller
 
         $stores = array_chunk($stores, $p);
 
-        $dealsCard = Deal::available()->limit(5)->get();
+        $dealsCard = Deal::available()->get();
 
         return view('home.oldindex', compact('stores', 'storeSlide', 'dealsCard'));
 
