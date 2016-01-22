@@ -101,7 +101,7 @@
     <?php $cardN = 0; ?>
     @foreach($dealsCard as $card)
         <?php $cardN++;
-            if ($cardN>=5) {
+            if ($cardN>=6) {
                 break;
             }
             ?>
