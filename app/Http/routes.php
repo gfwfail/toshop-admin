@@ -57,7 +57,7 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
         ]);
     });
     Route::get('/', [
-        'as' => 'home', 'uses' => 'HomeController@index'
+        'as' => 'home', 'uses' => 'HomeController@extrabux'
     ]);
 
     Route::get('/home/contactus', [
@@ -91,7 +91,7 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
 
 
     Route::get('/home', [
-        'as' => 'home', 'uses' => 'HomeController@index'
+        'as' => 'home', 'uses' => 'HomeController@extrabux'
     ]);
 
     Route::get('/stores', [

@@ -201,18 +201,14 @@
 
 
     <div class="col-md-3">
+        {!! Ad::show('right_panel1') !!}
+        {!! Ad::show('right_panel2') !!}
 
         <div class="panel panel-default">
             <div class="panel-heading"><span class="border-bot">Toshop Blog</span></div>
             <div class="panel-body">
                 {!! Ad::show('blog') !!}
-                <ul class="list-unstyled">
-                    <li><a href="#"> link1 </a></li>
-                    <li><a href="#"> link1 </a></li>
 
-                    <li><a href="#"> link1 </a></li>
-
-                </ul>
             </div>
         </div>
 
