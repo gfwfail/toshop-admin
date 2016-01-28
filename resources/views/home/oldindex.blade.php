@@ -131,10 +131,10 @@
                <p>
                    Code:<span class="text-success"> {{$card->code}} </span>
                </p>
-                   <p>
-                       <a href="{{$card->store->sidlink}}" class="btn btn-danger btn-sm">Shop Now</a>
-                   </p>
                @endif
+               <p>
+                   <a href="{{$card->store->sidlink}}" class="btn btn-danger btn-sm">Shop Now</a>
+               </p>
            </div>
        </div>
     </div>
