@@ -10,7 +10,9 @@
         "laravelcollective/html": "5.2.*",
         "ender/laravel-ueditor": "0.8.*",
         "barryvdh/laravel-ide-helper": "^2.1",
-        "appzcoder/crud-generator": "^1.0"
+        "appzcoder/crud-generator": "^1.0",
+        "kodeine/laravel-meta": "dev-master"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

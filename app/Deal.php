@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Kodeine\Metable\Metable;
 
 class Deal extends Model
 {
+    use Metable;
+
     protected $fillable = ['name', 'description','store_id','code','expired_at'];
 
     public static $rules =
@@ -14,6 +17,8 @@ class Deal extends Model
             'categories_id'=>'required',
             'expired_at'=>'date'
         ];
+
+
 
 
 

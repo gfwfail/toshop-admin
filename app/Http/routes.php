@@ -21,6 +21,13 @@ Route::group( ['middleware' => ['auth','admin']],function () {
         'as' => 'home', 'uses' => 'DashboardController@index'
     ]);
 
+
+    Route::group( [ 'prefix'=>'metas'],function () {
+        Route::get('deal/{id}/{k}', [
+            'uses' => 'MetaController@setDeal'
+        ]);
+    });
+
     Route::get('/goods', [
         'as' => 'goods', 'uses' => 'GoodsController@index'
     ]);

@@ -98,7 +98,7 @@ class DealsController extends Controller
         $this->validate($request, Deal::$rules);
 
         $deal = Deal::find($id);
-        $deal ->update($request->only(['name','code','expired_date','store_id','description']));
+        $deal ->update($request->only(['name','code','expired_at','store_id','description']));
         $deal->categories()->sync($request->input('categories_id'));
 
         $this->uploadPhoto($request,$id);

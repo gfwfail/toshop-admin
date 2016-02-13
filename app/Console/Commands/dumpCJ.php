@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class dumpCJ extends Command
+class DumpCJ extends Command
 {
     /**
      * The name and signature of the console command.
@@ -37,6 +37,6 @@ class dumpCJ extends Command
      */
     public function handle()
     {
-        //
+        $this->info(PHP_EOL."xo22xo".PHP_EOL);
     }
 }

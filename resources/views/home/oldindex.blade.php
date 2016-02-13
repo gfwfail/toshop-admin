@@ -99,12 +99,8 @@
 
 <div class="row">
     <?php $cardN = 0; ?>
-    @foreach($dealsCard as $card)
-        <?php $cardN++;
-            if ($cardN>=6) {
-                break;
-            }
-            ?>
+    @foreach($dealsCardShow as $card)
+
     <div class="col-md-2-4">
        <div class="deal-card">
            <div class="deal-card-logo visible-lg visible-md"
@@ -150,7 +146,7 @@
 
     <div class="col-md-9">
 
-        @foreach($dealsCard as $card)
+        @foreach($dealsCardList as $card)
 
 
         <div class="row good-list">

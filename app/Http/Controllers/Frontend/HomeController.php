@@ -45,8 +45,20 @@ class HomeController extends Controller
         $stores = array_chunk($stores, $p);
 
         $dealsCard = Deal::available()->get();
+        $dealsCardShow=[];
+        $dealsCardList =[];
+        foreach ($dealsCard as $deal) {
+            if ($deal->homepage==1){
+                array_push($dealsCardShow,$deal);
+            } else
+            {
+                array_push($dealsCardList,$deal);
 
-        return view('home.oldindex', compact('stores', 'storeSlide', 'dealsCard'));
+            }
+        }
+
+
+        return view('home.oldindex', compact('stores', 'storeSlide', 'dealsCardShow','dealsCardList'));
 
     }
 

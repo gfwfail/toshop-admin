@@ -26,11 +26,11 @@ class AccountService
     }
 
 
-    public function refundToReferrer($userid, $amount)
+    public function refundToReferrer($userid, $amount, $description = "Cash Back")
     {
 
         $depth = [0.1, 0.08, 0.02, 0.01];
-        $this->debit($userid, 0, $amount * 0.8, ' Cash back');
+        $this->debit($userid, 0, $amount * 0.8, $description);
 
         $referrer = User::find($userid)->referrer;
 
