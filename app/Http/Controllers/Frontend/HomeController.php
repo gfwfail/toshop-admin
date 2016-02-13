@@ -48,7 +48,7 @@ class HomeController extends Controller
         $dealsCardShow=[];
         $dealsCardList =[];
         foreach ($dealsCard as $deal) {
-            if ($deal->homepage==1){
+            if ($deal->homepage=='yes'){
                 array_push($dealsCardShow,$deal);
             } else
             {

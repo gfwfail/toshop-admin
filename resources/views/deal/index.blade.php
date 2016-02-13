@@ -51,9 +51,9 @@
                                    {!!  Form::hidden('_method', 'DELETE') !!}
                                    {!! Form::submit('删除', array('class' => 'btn btn-danger')) !!}
                                    {!! Form::close() !!}
-                                    @if (($deal->homepage)=='0')
+                                    @if ($deal->homepage!='yes')
                                    <a class="btn btn-small btn-success"
-                                      href="{!! URL::to('metas/deal/' . $deal->id . '/homepage?v=1') !!}">首页展示</a>
+                                      href="{!! URL::to('metas/deal/' . $deal->id . '/homepage?v=yes') !!}">首页展示</a>
                                    @else
                                        <a class="btn btn-small btn-default"
                                           href="{!! URL::to('metas/deal/' . $deal->id . '/homepage?v=0') !!}">取消首页展示</a>
