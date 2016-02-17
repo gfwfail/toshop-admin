@@ -56,7 +56,7 @@
 
 <div class="container-fluid searchbar navbar-fixed-top">
     <div class="row">
-        <form role="search" method="get" action="/">
+        <form role="search" method="get" action="/stores">
         <div class="col-md-12">
             <div class="col-md-3">
 
