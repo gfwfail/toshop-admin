@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.2.15 on 2016-02-13.
+ * Generated for Laravel 5.2.15 on 2016-02-21.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12894,6 +12894,11 @@ namespace {
 
 
     class UEditor extends \Ender\UEditor\UEditor{
+        
+    }
+
+
+    class Forum extends \Riari\Forum\Frontend\Support\Forum{
         
     }
 

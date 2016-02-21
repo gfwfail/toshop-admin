@@ -83,13 +83,13 @@
         <div class="row">
             <div class="col-md-3 category-left" >
                 <ul class="list-unstyled">
-                    @foreach($categories as $category)
+                    @foreach($cates as $category)
                         <li><a href="/category/{{$category->slug}}" @mouseover='(category="{{$category->name}}") && fetchData("{{$category->slug}}")'>{{$category->name}}</a></li>
                     @endforeach
                     <li><a href="/stores"><strong>All Store</strong></a></li>
                 </ul>
             </div>
-            <div class="col-md-5" >
+            <div class="col-md-4" >
                 <h3 style="color:#000">Recommended Stores</h3>
                 <li class="list-unstyled" v-for="store in stores" style="border-bottom: solid 1px #eee;margin:4px;">
                     <a href="@{{ store.sidLink }}" target="_blank">  @{{ store.name }}  </a><br>
@@ -100,7 +100,7 @@
 
                 <a href="/category/@{{ slug }}"><strong>See all @{{category }}</strong></a>
             </div>
-            <div class="col-md-4" id="category-ad">
+            <div class="col-md-5" id="category-ad">
 
             </div>
         </div>
@@ -110,6 +110,7 @@
 
 <div class="container body-wrap">
 
+    @yield('forum')
 
     @yield('content')
 
@@ -122,7 +123,9 @@
                 <p style="color:#666"><i class="fa fa-copyright"></i> 2015-2016 Toshop.net |
                     <a href="/pages/terms.html">Terms of Service</a> |
                     <a href="/pages/privacy.html">Privacy Policy</a> |
-                    <a href="/pages/aboutus.html">About us</a>
+                    <a href="/pages/aboutus.html">About us</a> |
+                    <a href="/forum">Forum</a>
+
 
                 </p>
 

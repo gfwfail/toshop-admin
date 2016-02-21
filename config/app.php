@@ -154,6 +154,8 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
 
+        Riari\Forum\ForumServiceProvider::class,
+        Riari\Forum\Frontend\ForumFrontendServiceProvider::class
 
 
 

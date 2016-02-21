@@ -14,7 +14,7 @@ class HomeComposer {
      */
     public function compose(View $view)
     {
-        $view->with('categories', Category::orderBy('name')->get())
+        $view->with('cates', Category::orderBy('name')->get())
 
 
         ;
