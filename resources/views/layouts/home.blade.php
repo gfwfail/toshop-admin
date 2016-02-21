@@ -100,7 +100,7 @@
 
                 <a href="/category/@{{ slug }}"><strong>See all @{{category }}</strong></a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" id="category-ad">
 
             </div>
         </div>

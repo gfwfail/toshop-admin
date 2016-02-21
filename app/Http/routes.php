@@ -79,6 +79,9 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
     ]);
 
 
+    Route::get('/api/ad/{slug}',function($slug){
+        return  \Ad::show($slug);
+    });
     Route::get('/api/category/{slug}', ['as'=>'categoryapi',function($slug){
        return \App\Category::whereSlug($slug)->first()->stores()->limit(5)->get();
     }]);

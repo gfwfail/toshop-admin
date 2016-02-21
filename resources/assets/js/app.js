@@ -30,6 +30,12 @@ new Vue({
                 self.stores= data;
 
             });
+
+            $.get( '/api/ad/home-'+slug, function( data ) {
+              $('category-ad').html(data);
+
+            });
+
         }
     }
 });
