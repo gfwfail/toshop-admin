@@ -31,8 +31,9 @@ new Vue({
 
             });
 
-            $.get( '/api/ad/home-'+slug, function( data ) {
-              $('category-ad').html(data);
+            $.get( '/api/b/home-'+slug, function( data ) {
+
+              $('#category-ad').html(data);
 
             });
 
