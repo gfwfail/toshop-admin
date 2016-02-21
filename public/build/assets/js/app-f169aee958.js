@@ -23781,6 +23781,7 @@ new Vue({
     data: {
         showModal: false,
         category:'',
+        slug:'',
         stores :[]
     },
     methods: {
@@ -23789,6 +23790,7 @@ new Vue({
         },
         fetchData: function (slug) {
             var self = this;
+            self.slug=slug;
             $.get( '/api/category/'+slug, function( data ) {
                 console.log(data);
                 self.stores= data;
@@ -23868,12 +23870,11 @@ $(document).ready(function () {
 
     $('#categoryBtn').on('mouseover',function (e) {
 
-        $('#categoryPanel').css('display','block');
+        $('#categoryPanel').show('fast');
     });
     $('#categoryPanel').mouseleave(function (e){
 
-        $('#categoryPanel').css('display','none');
-
+        $('#categoryPanel').hide('fast');
     });
 
 });

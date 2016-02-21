@@ -8616,6 +8616,19 @@ body {
   background: #f8f8f8;
 }
 
+.btn-outline {
+  background-color: #fff;
+  border: solid 2px #dce4ec;
+  border-radius: 0;
+  color: #b1b6c0;
+  transition: all 0.5s;
+}
+
+.btn-outline:hover {
+  border-color: #2980b9;
+  color: #333;
+}
+
 .col-lg-2-4 {
   position: relative;
   min-height: 1px;
@@ -8748,14 +8761,33 @@ th {
   background: #fff;
   position: fixed;
   display: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   z-index: 9999;
   width: 900px;
+  height: 440px;
   margin: 0 auto;
   left: 10%;
 }
 
+.category-panel a {
+  text-decoration: none;
+}
+
+.category-left {
+  border-right: solid 1px #eee;
+}
+
 .category-left li {
-  margin: 6px;
+  margin: 10px;
+}
+
+.category-left li a {
+  color: #333;
+}
+
+.category-left li a:hover {
+  color: #27ae60;
+  text-decoration: none;
 }
 
 .category-right {
