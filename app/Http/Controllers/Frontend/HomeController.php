@@ -64,7 +64,8 @@ class HomeController extends Controller
     }
 
     public function category($slug){
-        $stores = Category::whereSlug($slug)->first()->stores();
+        $stores = Category::whereSlug($slug)->first()->stores()->get();
+
         return view('home.index', compact('stores', 'storeSlide'));
 
     }
