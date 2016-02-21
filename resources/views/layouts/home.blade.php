@@ -55,14 +55,14 @@
 
 
 <div class="container-fluid searchbar navbar-fixed-top">
-    <div class="row">
+    <div class="row top-wrap">
         <form role="search" method="get" action="/stores">
-        <div class="col-md-12">
-            <div class="col-md-3">
-
+            <div class="col-md-12">
+            <div class="col-md-2">
+            <button type="button" id="categoryBtn" class="btn btn-default"> Shop By Category  <span class="glyphicon glyphicon-triangle-bottom
+"></span></button>
             </div>
-           <div class="col-md-6">
-
+           <div class="col-md-6 col-md-offset-1">
                    <div class="input-group">
                        <input type="text" name="keyword" class="form-control typeahead"
                               placeholder="Search for stores">
@@ -78,7 +78,27 @@
         </form>
     </div>
 </div>
-
+<div class="category-panel" id="categoryPanel">
+    <div class="row">
+        <div class="col-md-3 category-left">
+        <ul class="list-unstyled">
+        @foreach($categories as $category)
+           <li><a href="/category/{{$category->slug}}" @mouseover='(category="{{$category->name}}") && fetchData("{{$category->slug}}")'>{{$category->name}}</a></li>
+    @endforeach
+            <li><a href="/stores"><strong>All Store</strong></a></li>
+        </ul>
+        </div>
+        <div class="col-md-9">
+            <h2>Recommended Stores</h2>
+            <li class="list-unstyled" v-for="store in stores">
+                <a href="@{{ store.sidLink }}" target="_blank">  @{{ store.name }}  </a><br>
+                <a href="@{{ store.sidLink }}" class="text-warning" target="_blank">@{{ store.cashback }} Cash Back ></a>
+            </li>
+            <hr>
+            <a>See all @{{category }}</a>
+        </div>
+    </div>
+ </div>
 
 <div class="container body-wrap">
 

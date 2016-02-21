@@ -8743,9 +8743,33 @@ th {
   transition: color 0.5s;
 }
 
+.category-panel {
+  border: solid 1px #ccc;
+  background: #fff;
+  position: fixed;
+  display: none;
+  z-index: 9999;
+  width: 900px;
+  margin: 0 auto;
+  left: 10%;
+}
+
+.category-left li {
+  margin: 6px;
+}
+
+.category-right {
+  border-left: solid 1px #ccc;
+  padding: 10px;
+}
+
+.top-wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .body-wrap {
   margin-top: 120px;
-  max-width: 1000px;
 }
 
 .searchbar {

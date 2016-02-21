@@ -15,6 +15,8 @@ class ComposerServiceProvider extends ServiceProvider
     {
         // Using class based composers...
         \View::composer(['good.*','store.*','deal.*'], 'App\Http\Composers\AdminComposer');
+        \View::composer(['home.*'], 'App\Http\Composers\HomeComposer');
+
     }
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Category;
 use App\Deal;
 use App\Message;
 use App\Page;
@@ -62,6 +63,11 @@ class HomeController extends Controller
 
     }
 
+    public function category($slug){
+        $stores = Category::whereSlug($slug)->first()->stores();
+        return view('home.index', compact('stores', 'storeSlide'));
+
+    }
     public function index(Request $request)
     {
         $keyword = $request->get('keyword');

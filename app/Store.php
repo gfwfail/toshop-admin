@@ -17,7 +17,7 @@ class Store extends Model
         'categories_id'=>'required',
 
         ];
-
+    protected $appends = ['sidLink'];
     public function goods()
     {
         return $this->hasMany(Good::class);

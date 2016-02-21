@@ -1,4 +1,3 @@
-
 Vue.component('modal', {
     template: '#modal-template',
     props: {
@@ -14,14 +13,26 @@ Vue.component('modal', {
 new Vue({
     el: 'body',
     data: {
-        showModal: false
+        showModal: false,
+        category:'',
+        stores :[]
     },
     methods: {
         signin: function (e) {
             e.preventDefault()
+        },
+        fetchData: function (slug) {
+            var self = this;
+            $.get( '/api/category/'+slug, function( data ) {
+                console.log(data);
+                self.stores= data;
+
+            });
         }
     }
 });
+
+
 
 var stores = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
@@ -34,10 +45,7 @@ var stores = new Bloodhound({
 });
 
 
-
-
-
-$(document).ready( function() {
+$(document).ready(function () {
     $('.typeahead').typeahead(null, {
         name: 'stores',
         display: 'name',
@@ -48,7 +56,7 @@ $(document).ready( function() {
                 'unable to find any stores that match the current query',
                 '</div>'
             ].join('\n'),
-            suggestion: function(data) {
+            suggestion: function (data) {
                 return '<p><strong>' + data.name + '</strong>  <h3 class="text-warning pull-right"> ' + data.cashback + '</h3> </p>';
             }
         }
@@ -56,15 +64,17 @@ $(document).ready( function() {
 
     $('#searchicon').hide('fast');
     var isSearchBarShown = 1;
-    function showSearchBar(){
-        $('.searchbar').css({top: '0px',opacity:1}); //appear
+
+    function showSearchBar() {
+        $('.searchbar').css({top: '0px', opacity: 1}); //appear
         $('#navbar').css({"box-shadow": 'none'}); //appear
-        isSearchBarShown=1;
+        isSearchBarShown = 1;
     }
-    function hideSearchBar(){
-        $('.searchbar').css({top: '-70px',opacity:0}); //disapear
+
+    function hideSearchBar() {
+        $('.searchbar').css({top: '-70px', opacity: 0}); //disapear
         $('#navbar').css({"box-shadow": '0px 2px 16px #ccc'}); //appear
-        isSearchBarShown=0;
+        isSearchBarShown = 0;
     }
 
     $(window).bind('scroll', function () {
@@ -72,15 +82,17 @@ $(document).ready( function() {
             showSearchBar();
             $('#searchicon').hide('fast');
         } else {
-            hideSearchBar();
-            $('#searchicon').show('fast');
+            if ($('#categoryPanel').css('display') == 'none') {
+                hideSearchBar();
+                $('#searchicon').show('fast');
+            }
 
         }
     });
 
-    $('#searchicon').on('click', function(e) {
+    $('#searchicon').on('click', function (e) {
         e.preventDefault();
-        if (isSearchBarShown){
+        if (isSearchBarShown) {
             hideSearchBar();
         } else {
             showSearchBar();
@@ -88,5 +100,14 @@ $(document).ready( function() {
 
     });
 
+    $('#categoryBtn').on('mouseover',function (e) {
+
+        $('#categoryPanel').css('display','block');
+    });
+    $('#categoryPanel').mouseleave(function (e){
+
+        $('#categoryPanel').css('display','none');
+
+    });
 
 });

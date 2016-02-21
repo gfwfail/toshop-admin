@@ -13,4 +13,7 @@ class Category extends Model
     [ 'name' => 'required|max:255',
         'slug'=>'required|unique:categories,id|max:255'];
     //
+    public function stores(){
+        return $this->belongsToMany(Store::class);
+    }
 }

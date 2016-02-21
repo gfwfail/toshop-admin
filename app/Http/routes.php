@@ -67,6 +67,9 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
         'as' => 'home', 'uses' => 'HomeController@extrabux'
     ]);
 
+    Route::get('/category/{slug}', [
+        'as' => 'home', 'uses' => 'HomeController@category'
+    ]);
     Route::get('/home/contactus', [
         'as' => 'home', 'uses' => 'HomeController@getContactus'
     ]);
@@ -76,6 +79,9 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
     ]);
 
 
+    Route::get('/api/category/{slug}', ['as'=>'categoryapi',function($slug){
+       return \App\Category::whereSlug($slug)->first()->stores()->limit(5)->get();
+    }]);
     Route::get('/api/stores', [
         'as' => 'home', function(){
             $keyword = request()->get('keyword');
