@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('title')
-    {$user->name}}'s Blog
+    {{$user->name}}'s Blog
 @endsection
 @section('content')
 
