@@ -52,6 +52,14 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
 
     Route::auth();
 
+    Route::get('/blog/{id}',[
+        'as' => 'home.user.blog', 'uses' => 'BlogController@showUser'
+    ]);
+
+    Route::get('/blog/{userid}/{postid}',[
+        'as' => 'home.user.blog', 'uses' => 'BlogController@showBlog'
+    ]);
+
     Route::get('/reg/{id}', 'Auth\AuthController@registerByReferrer');
 
     Route::group( [ 'middleware' => ['auth'],'prefix'=>'user'],function () {
@@ -62,6 +70,27 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
         Route::get('/statistics',[
             'as' => 'home.user.statistics', 'uses' => 'DashboardController@getStats'
         ]);
+
+        Route::get('/blog',[
+            'as' => 'home.user.blog', 'uses' => 'BlogController@index'
+        ]);
+        Route::get('/blog/new',[
+            'as' => 'home.user.blog', 'uses' => 'BlogController@create'
+        ]);
+        Route::post('/blog/new',[
+            'as' => 'home.user.blog', 'uses' => 'BlogController@store'
+        ]);
+        Route::get('/blog/edit/{id}',[
+            'as' => 'home.user.blog', 'uses' => 'BlogController@edit'
+        ]);
+        Route::put('/blog/edit/{id}',[
+            'as' => 'home.user.blog', 'uses' => 'BlogController@update'
+        ]);
+
+        Route::delete('/blog/{id}',[
+            'as' => 'home.user.blog.delete', 'uses' => 'BlogController@destroy'
+        ]);
+
     });
     Route::get('/', [
         'as' => 'home', 'uses' => 'HomeController@extrabux'

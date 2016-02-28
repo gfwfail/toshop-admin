@@ -42,6 +42,12 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany(self::class, 'referrer', 'id');
     }
 
+    public function avatar($size=40)
+    {
+        $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $this->email ) ) ) . "&s=" . $size;
+        return $grav_url;
+    }
+
     public function insertNode()
     {
 
