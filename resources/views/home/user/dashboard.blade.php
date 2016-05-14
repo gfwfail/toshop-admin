@@ -3,8 +3,9 @@
 @section('panelcontent')
     @inject('account', 'App\Services\AccountService')
 
-    <div class="col-md-6">
-        <table class="table table-striped">
+    <div class="col-md-9 user-panel">
+
+           <table class="table table-striped">
             <thead>
             <tr>
                 <th>Pay</th>
@@ -33,31 +34,8 @@
                 </tr>
             @endif
             </tbody>
-        </table>
+        </table></div>
 
-
-    </div>
-    <div class="col-md-3">
-
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <h1 class="lead">Balance:
-                </h1>
-
-                <p class="well">
-                    <?php
-                    echo int2currency($account->balance(Auth::user()->id));
-                    ?>
-                </p>
-                <hr>
-                <h4>Refer By Link</h4>
-
-                <p><a href="{{ url('reg/'.Auth::user()->id )}}"> {{ url('reg/'.Auth::user()->id )}} </a>
-                </p>
-
-            </div>
-        </div>
-    </div>
 
 
 @endsection

@@ -2,7 +2,7 @@
 
 @section('panelcontent')
 
-    <div class="col-md-6">
+    <div class="col-md-6 user-panel">
         <a href="/user/blog/new" class="btn btn-success btn-sm">New Blog</a>
         <br> <br>
         <table class="table table-striped">

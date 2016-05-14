@@ -6,5 +6,5 @@
  * Time: 下午10:48
  */
 function int2currency($int) {
-    return '$'.money_format('%i',($int)/100);
+    return '$'.number_format( $int/100 , 2, '.', '');
 }

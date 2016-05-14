@@ -24,6 +24,81 @@ body{
 }
 
 
+.user-panel {
+  border-radius: 0;
+  background: #fff;
+  border: solid 1px #eee;
+  & header {
+    font-size:2em;
+    width:100%;
+    border-bottom: solid 1px #eee;
+    margin:0px -15px 30px -15px;
+    padding:10px 15px;
+  }
+
+  & div {
+    margin-bottom:10px;
+  }
+}
+
+.greenli {
+  background: $btn-success-bg !important;
+  & a {
+    color:#fff !important;
+    background: none;
+
+    &:hover
+    {
+      background: none  !important;
+      color: #666 !important;
+      transition: all 1s;
+    }
+  }
+
+
+}
+.user-menu {
+  border-radius: 0;
+  background: #fff;
+  border:solid 1px #eee;
+
+
+
+  & a{
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+
+  &.name{
+    text-align: center;
+    padding:20px;
+  }
+  &:not(:last-child){
+    border-bottom: 0;
+  }
+  & li {
+    &.active {
+      border-left:solid 5px #000000;
+      a {
+        font-weight: bold;
+      }
+    }
+      a {
+       margin-left:20px;
+        margin-right:20px;
+
+        font-size:14px;
+        color:#333;
+
+        border-bottom:solid 1px #eee;
+
+    }
+
+    &:last-child{ & a {border-bottom: 0}}}
+
+
+}
 
 .col-lg-2-4{
   @include make-lg-column(2.4)

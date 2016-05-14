@@ -29,4 +29,11 @@ class DashboardController extends Controller
 
         return view('home.user.statistics',compact('stat','directReferrals'));
     }
+
+    function getProfile()
+    {
+        $user = auth()->user();
+
+        return view('home.user.profile',compact('user'));
+    }
 }

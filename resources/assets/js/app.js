@@ -16,12 +16,24 @@ new Vue({
         showModal: false,
         category:'',
         slug:'',
-        stores :[]
+        stores :[],
+        greetingMsg:'hello'
     },
+    created: function() {
+        var now = new Date();
+        var hrs = now.getHours();
+
+        var self = this;
+        if (hrs <  6) self.greetingMsg = "Good evening"; // REALLY early
+        if (hrs >=  6) self.greetingMsg = "Good morning";      // After 6am
+        if (hrs > 12) self.greetingMsg = "Good afternoon";    // After 12pm
+        if (hrs > 17) self.greetingMsg = "Good evening";      // After 5pm
+     },
     methods: {
         signin: function (e) {
             e.preventDefault()
         },
+
         fetchData: function (slug) {
             var self = this;
             self.slug=slug;

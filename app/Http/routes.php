@@ -71,6 +71,10 @@ Route::group(['namespace'=>'Frontend','middleware'=>'web'], function() {
             'as' => 'home.user.statistics', 'uses' => 'DashboardController@getStats'
         ]);
 
+        Route::get('/profile',[
+            'as' => 'home.user.profile', 'uses' => 'DashboardController@getProfile'
+        ]);
+
         Route::get('/blog',[
             'as' => 'home.user.blog', 'uses' => 'BlogController@index'
         ]);

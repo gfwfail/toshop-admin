@@ -32,6 +32,10 @@ class AccountService
         $depth = [0.1, 0.08, 0.02, 0.01];
         $this->debit($userid, 0, $amount * 0.8, $description);
 
+        if ( !User::find($userid) ) {
+            return;
+        }
+        
         $referrer = User::find($userid)->referrer;
 
 

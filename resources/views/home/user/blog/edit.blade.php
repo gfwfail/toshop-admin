@@ -2,7 +2,7 @@
 
 @section('panelcontent')
 
-    <div class="col-md-8">
+    <div class="col-md-8 user-panel">
         {{ Form::open([ 'method' => 'PUT'] )}}
             <div class="form-group">
                 <label for="title" class="col-lg-2 control-label">Title</label>

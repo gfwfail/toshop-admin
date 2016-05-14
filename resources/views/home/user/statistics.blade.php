@@ -58,7 +58,7 @@
 @endsection
 @section('panelcontent')
 
-    <div class="col-md-9">
+    <div class="col-md-9 user-panel">
         <h3>All Level referrals count</h3>
         <div class="row">
     <div class="col-md-8">
